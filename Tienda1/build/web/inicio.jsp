@@ -9,16 +9,16 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script type="text/javascript" src="control.js"></script>
+        <link rel="stylesheet" type="text/css" href="CSS/estilos.css">
+        <script src="JS/jquery.js" type="text/javascript"></script> 
+        <script type="text/javascript" src="JS/control.js"></script>
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Tienda</h1>
-        
-        
         <% 
-            /////////////////////////////////////////////////////////////
-            /// Hace las verificaciones del usuario qu desea ingresar ///
-            /////////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////
+            /// Hace las verificaciones del usuario que desea ingresar ///
+            //////////////////////////////////////////////////////////////
             String user = request.getParameter("user");
             String pass  = request.getParameter("pass");
             if (user.equals("") || pass.equals("")) {
@@ -37,7 +37,6 @@
                 usuarioActual = new SessionActual("", "");}   
             
         %>
- 
 
         <%
             ///////////////////////////////////////
@@ -46,7 +45,36 @@
             List<ObjetoTienda> lista = Tienda.mostrarTienda();
             int cont = 0;
         %>
+        
+        <div class="Primario">
+            <div class="encabezado">
+                dd
+            </div>
 
+            <div class="barralateralIzq">
+                <h1 id="textoGrande">Categorias</h1>
+                <button id="cajaCategoria">  Frutas     </button>
+                <button id="cajaCategoria">  Verduras   </button>
+                <button id="cajaCategoria">  Vegetales  </button>
+                <button id="cajaCategoria">  Legumbres  </button>
+                <button id="cajaCategoria">  Tubérculos </button>
+                <button id="cajaCategoria">  Semillas   </button>
+                <button id="cajaCategoria">  Hortalizas </button>
+            </div>
+            
+            <div class="contenido" id="cont">
+                <div>
+                    <h3>Categoria</h3>
+                </div>
+            </div>
+
+            <div class="barralateralDer" id="barraDer">
+                <h2 id="textoGrande">Mi Orden</h2>
+            </div>
+
+            
+        </div>
+        <h1>Tienda</h1>
         
         <c:forEach var="i" begin="<%=cont%>" end="<%=lista.size()-1%>">
 
@@ -59,6 +87,7 @@
             <p style="display: none"><%=  cont += 1 %></p>
         </c:forEach>
         
+            
     </body>
 </html>
 

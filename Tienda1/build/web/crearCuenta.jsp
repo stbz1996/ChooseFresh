@@ -10,7 +10,7 @@
         <title>JSP Page</title>
     </head>
     
-    <body>
+    <body BGCOLOR="black">
         <div class="login">
             <h1>Crear Cuenta</h1>
             <div class="part1">

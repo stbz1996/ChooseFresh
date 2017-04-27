@@ -1,4 +1,5 @@
 /*Login*/
+
 .login{
     background: green;
     width: 50%;
@@ -65,6 +66,88 @@
 
 
 
+/* parte de la tienda  */ 
+.Primario{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 1%;
+}
+
+.encabezado{
+    background: black;
+    width: 96%;
+    padding: 2%;
+    position:fixed;
+    right:0px; 
+    top:0px; 
+    z-index:10;
+}
+
+.barralateralIzq{
+    background: black;
+    width: 15%;
+    padding: 1%;
+    float: left;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 4.6%;
+    margin-right: 1%;
+    position:fixed;
+    left:3px; 
+    top:12px; 
+    z-index:10;
+}
+
+.barralateralDer{
+    background: black;
+    width: 15%;
+    padding: 1%;
+    border-radius: 10px;
+    height: auto;
+    margin-top: 4.6%;
+    margin-left: 82%;
+    position:fixed;
+    right:3px; 
+    top:12px; 
+    z-index:10;
+}
+
+.contenido{
+    background: #2ADA22;
+    width: 64%;
+    padding: 1%;
+    float: left;
+    height: auto;
+    margin-top: 4.6%;
+    margin-left: 17%;
+    
+}
+
+
+#textoGrande{
+    color: white;
+    text-align: center;
+}
+
+#cajaCategoria{
+    background: white;
+    opacity: 0.8;
+    text-align: center;
+    width: 100%;
+    padding: 7%;
+    border-radius: 20px;
+    margin-bottom: 6%;
+    font-size: 18px;
+}
+
+#cajaCategoria:hover{
+    background: #2ADA22;
+}
+
+
+.barralateralDer h2{
+    color: white;
+}
 
 
 
