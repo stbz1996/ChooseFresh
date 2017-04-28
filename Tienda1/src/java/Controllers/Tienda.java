@@ -11,10 +11,22 @@ public class Tienda {
     public static List<ObjetoTienda> Tubérculos = new ArrayList<>();
     public static List<ObjetoTienda> Semillas = new ArrayList<>();
     public static List<ObjetoTienda> Hortalizas = new ArrayList<>();
+    public static List<productoOrden> orden = new ArrayList<>();
     
+    public static void agregarEnOrden(productoOrden proc){
+        String buscar = proc.nombre;
+        for (int i = 0; i < orden.size()-1; i++) {
+            if (orden.get(i).nombre.equals(buscar)) {
+                orden.remove(i);
+            }
+        }
+        orden.add(proc);
+    }
     
     public static void pedirtienda(){
         // esto va a contener todo el listado que viene desde la base
+        // solo haga sus cositas y deje en la variable tienda todo la vara jaja nada mas, 
+        // el resto se hace solo
         List<ObjetoTienda> lista = new ArrayList<>();
         lista.add(new ObjetoTienda("Bananos", 1522, "Kg", "Frutas", ""));
         lista.add(new ObjetoTienda("Sandia", 4520, "Kg", "Frutas", ""));
