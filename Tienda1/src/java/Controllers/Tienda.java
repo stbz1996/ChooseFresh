@@ -12,6 +12,7 @@ public class Tienda {
     public static List<ObjetoTienda> Semillas = new ArrayList<>();
     public static List<ObjetoTienda> Hortalizas = new ArrayList<>();
     
+    
     public static void pedirtienda(){
         // esto va a contener todo el listado que viene desde la base
         List<ObjetoTienda> lista = new ArrayList<>();
