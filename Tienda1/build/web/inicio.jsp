@@ -48,10 +48,11 @@
         
         <div class="Primario">
             <div class="encabezado">
-                dd
+                
             </div>
 
             <div class="barralateralIzq">
+                <br>
                 <h1 id="textoGrande">Categorias</h1>
                 <button id="cajaCategoria">  Frutas     </button>
                 <button id="cajaCategoria">  Verduras   </button>
@@ -63,15 +64,82 @@
             </div>
             
             <div class="contenido" id="cont">
-                <div>
-                    <h3>Categoria</h3>
-                </div>
-            </div>
-
-            <div class="barralateralDer" id="barraDer">
-                <h2 id="textoGrande">Mi Orden</h2>
-            </div>
-
+                <h1 id="textoGrande2">Tienda</h1>
+                
+  
+                   
+                <form id="objetoTienda">
+                    <h3 id="txtoProducto">Nombre del producto</h3>
+                    <h4 id="txtoProducto">Valor por Unidad</h4>
+                    <img id="imgProducto" src="https://lpcdedios.files.wordpress.com/2013/11/bananas-01.jpg"/>
+                    <input type="number"  max="100" min="0" id="selector" required="required"/><p id="unidad">Kg</p>
+                    <input type="submit" value="Agregar" id="boton2"/>
+                </form>
+                <form id="objetoTienda">
+                    <h3 id="txtoProducto">Nombre del producto</h3>
+                    <h4 id="txtoProducto">Valor por Unidad</h4>
+                    <img id="imgProducto" src="https://lpcdedios.files.wordpress.com/2013/11/bananas-01.jpg"/>
+                    <input type="number"  max="100" min="0" id="selector" required="required"/><p id="unidad">Kg</p>
+                    <input type="submit" value="Agregar" id="boton2"/>
+                </form>
+                <form id="objetoTienda">
+                    <h3 id="txtoProducto">Nombre del producto</h3>
+                    <h4 id="txtoProducto">Valor por Unidad</h4>
+                    <img id="imgProducto" src="https://lpcdedios.files.wordpress.com/2013/11/bananas-01.jpg"/>
+                    <input type="number"  max="100" min="0" id="selector" required="required"/><p id="unidad">Kg</p>
+                    <input type="submit" value="Agregar" id="boton2"/>
+                </form>
+                <form id="objetoTienda">
+                    <h3 id="txtoProducto">Nombre del producto</h3>
+                    <h4 id="txtoProducto">Valor por Unidad</h4>
+                    <img id="imgProducto" src="https://lpcdedios.files.wordpress.com/2013/11/bananas-01.jpg"/>
+                    <input type="number"  max="100" min="0" id="selector" required="required"/><p id="unidad">Kg</p>
+                    <input type="submit" value="Agregar" id="boton2"/>
+                </form>
+                <form id="objetoTienda">
+                    <h3 id="txtoProducto">Nombre del producto</h3>
+                    <h4 id="txtoProducto">Valor por Unidad</h4>
+                    <img id="imgProducto" src="https://lpcdedios.files.wordpress.com/2013/11/bananas-01.jpg"/>
+                    <input type="number"  max="100" min="0" id="selector" required="required"/><p id="unidad">Kg</p>
+                    <input type="submit" value="Agregar" id="boton2"/>
+                </form>
+                <form id="objetoTienda">
+                    <h3 id="txtoProducto">Nombre del producto</h3>
+                    <h4 id="txtoProducto">Valor por Unidad</h4>
+                    <img id="imgProducto" src="https://lpcdedios.files.wordpress.com/2013/11/bananas-01.jpg"/>
+                    <input type="number"  max="100" min="0" id="selector" required="required"/><p id="unidad">Kg</p>
+                    <input type="submit" value="Agregar" id="boton2"/>
+                </form>
+                <form id="objetoTienda">
+                    <h3 id="txtoProducto">Nombre del producto</h3>
+                    <h4 id="txtoProducto">Valor por Unidad</h4>
+                    <img id="imgProducto" src="https://lpcdedios.files.wordpress.com/2013/11/bananas-01.jpg"/>
+                    <input type="number"  max="100" min="0" id="selector" required="required"/><p id="unidad">Kg</p>
+                    <input type="submit" value="Agregar" id="boton2"/>
+                </form>
+                <form id="objetoTienda">
+                    <h3 id="txtoProducto">Nombre del producto</h3>
+                    <h4 id="txtoProducto">Valor por Unidad</h4>
+                    <img id="imgProducto" src="https://lpcdedios.files.wordpress.com/2013/11/bananas-01.jpg"/>
+                    <input type="number"  max="100" min="0" id="selector" required="required"/><p id="unidad">Kg</p>
+                    <input type="submit" value="Agregar" id="boton2"/>
+                </form>
+                <form id="objetoTienda">
+                    <h3 id="txtoProducto">Nombre del producto</h3>
+                    <h4 id="txtoProducto">Valor por Unidad</h4>
+                    <img id="imgProducto" src="https://lpcdedios.files.wordpress.com/2013/11/bananas-01.jpg"/>
+                    <input type="number"  max="100" min="0" id="selector" required="required"/><p id="unidad">Kg</p>
+                    <input type="submit" value="Agregar" id="boton2"/>
+                </form>
+                <form id="objetoTienda">
+                    <h3 id="txtoProducto">Nombre del producto</h3>
+                    <h4 id="txtoProducto">Valor por Unidad</h4>
+                    <img id="imgProducto" src="https://lpcdedios.files.wordpress.com/2013/11/bananas-01.jpg"/>
+                    <input type="number"  max="100" min="0" id="selector" required="required"/><p id="unidad">Kg</p>
+                    <input type="submit" value="Agregar" id="boton2"/>
+                </form>
+                
+            </div>   
             
         </div>
         <h1>Tienda</h1>

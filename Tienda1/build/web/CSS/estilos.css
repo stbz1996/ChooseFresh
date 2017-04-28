@@ -1,4 +1,7 @@
 /*Login*/
+body{
+    background-image: url("http://jugandoaprendochiquimula.com/wp-content/uploads/2014/07/fondo-madera.jpg");
+}
 
 .login{
     background: green;
@@ -81,10 +84,10 @@
     right:0px; 
     top:0px; 
     z-index:10;
+   
 }
 
 .barralateralIzq{
-    background: black;
     width: 15%;
     padding: 1%;
     float: left;
@@ -96,33 +99,21 @@
     left:3px; 
     top:12px; 
     z-index:10;
-}
-
-.barralateralDer{
-    background: black;
-    width: 15%;
-    padding: 1%;
-    border-radius: 10px;
-    height: auto;
-    margin-top: 4.6%;
-    margin-left: 82%;
-    position:fixed;
-    right:3px; 
-    top:12px; 
-    z-index:10;
+    float: left;
 }
 
 .contenido{
-    background: #2ADA22;
-    width: 64%;
+    /*background: #2ADA22;*/
+    border: silver 75px solid;
+    border-image-source: url("http://1.bp.blogspot.com/-IcNzqySxCJk/VE-0Mx-KwoI/AAAAAAACq-Y/O4-KEyqFGKk/s1600/TRIBALES%2C%2BTATUAJES%2C%2BVI%C3%91ETAS%2BBN%2B(100).png");
+    border-image-slice: 100;
+    width: 69%;
     padding: 1%;
     float: left;
     height: auto;
-    margin-top: 4.6%;
-    margin-left: 17%;
-    
+    margin-top: 7%;
+    margin-left: 17.5%;
 }
-
 
 #textoGrande{
     color: white;
@@ -130,10 +121,10 @@
 }
 
 #cajaCategoria{
-    background: white;
-    opacity: 0.8;
+    background: #F87E17;
     text-align: center;
     width: 100%;
+    opacity: 0.9;
     padding: 7%;
     border-radius: 20px;
     margin-bottom: 6%;
@@ -141,13 +132,72 @@
 }
 
 #cajaCategoria:hover{
-    background: #2ADA22;
+    background: white;
 }
 
 
-.barralateralDer h2{
+#objetoTienda{
+    background: #F87E17;
+    width: 18%;
+    margin: 0% 1% 0% 1%;
+    float: left;
+    border-radius: 15px;
+    margin-bottom: 2%;
+}
+
+#objetoTienda:hover{
+    background: #FD5603;
+}
+
+#txtoProducto{
+    text-align: center;
+    font-size: 17px;
+    margin: 1%;
+}
+
+#imgProducto{
+    overflow: hidden;
+    width: 80%;
+    height: 120px;
+    border-radius: 15px;
+    margin-left: 10%;
+    -webkit-animation-name: animar2;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 2s;
+    -webkit-transform-style: preserve-3d;
+    animation-direction: alternate;
+}
+
+#boton2{
+    text-align: center;
+    padding: 1%;
+    font-size: 17px;
+    border-radius: 10px;
+    width: 60%;
+    margin-left: 20%;
+    margin-top: -4%;
+    margin-bottom: 2%;
+}
+
+#selector{
+    width: 50%;
+    margin-left: 20%;
+    float: left;
+}
+#unidad{
+    float: left;
+    width: 5%;
+    margin-top: 0%;
+    font-size: 17px;
+}
+
+
+#textoGrande2{
+    text-align: center;
     color: white;
 }
+
 
 
 
@@ -157,4 +207,9 @@
 @keyframes animar{
 	from{transform: rotateY(0deg);}
 	to{transform: rotateY(45deg);}
+}
+
+@keyframes animar2{
+	from{transform: rotateY(0deg);}
+	to{transform: rotateY(30deg);}
 }
