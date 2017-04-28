@@ -1,6 +1,7 @@
 /*Login*/
 body{
     background-image: url("http://jugandoaprendochiquimula.com/wp-content/uploads/2014/07/fondo-madera.jpg");
+    background-attachment: fixed;
 }
 
 .login{
@@ -78,13 +79,11 @@ body{
 
 .encabezado{
     background: black;
-    width: 96%;
-    padding: 2%;
+    width: 100%;
     position:fixed;
     right:0px; 
     top:0px; 
     z-index:10;
-   
 }
 
 .barralateralIzq{
@@ -199,7 +198,28 @@ body{
 }
 
 
+#textoIzq{
+    color: white;
+    float: left;
+    margin-top: 8px;
+    margin-bottom: 0px;
+    margin-left: 10px;
+    font-size: 30px;
+}
 
+#botonEncabezado{
+    background: #F87E17;
+    text-align: center;
+    width: 10%;
+    padding: 1%;
+    opacity: 0.9;
+    font-size: 18px;
+    float: right;
+     
+}
+#botonEncabezado:hover{
+    background: white;
+}
 
 
 

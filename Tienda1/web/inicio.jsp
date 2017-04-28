@@ -48,11 +48,16 @@
         
         <div class="Primario">
             <div class="encabezado">
-                
+                <h3 id="textoIzq">Bienvenido a Nombre de tienda Nombre de usuario</h3>
+                <button id="botonEncabezado">Salir</button>
+                <button id="botonEncabezado">Login</button>
+                <button id="botonEncabezado">Pedir</button>
+                <button id="botonEncabezado">Ver Orden</button>
             </div>
 
+            
+            
             <div class="barralateralIzq">
-                <br>
                 <h1 id="textoGrande">Categorias</h1>
                 <button id="cajaCategoria">  Frutas     </button>
                 <button id="cajaCategoria">  Verduras   </button>
