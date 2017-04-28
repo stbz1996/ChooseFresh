@@ -160,12 +160,6 @@ body{
     height: 120px;
     border-radius: 15px;
     margin-left: 10%;
-    -webkit-animation-name: animar2;
-    -webkit-animation-timing-function: linear;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-duration: 2s;
-    -webkit-transform-style: preserve-3d;
-    animation-direction: alternate;
 }
 
 #boton2{
@@ -229,7 +223,3 @@ body{
 	to{transform: rotateY(45deg);}
 }
 
-@keyframes animar2{
-	from{transform: rotateY(0deg);}
-	to{transform: rotateY(30deg);}
-}

@@ -42,8 +42,22 @@
             ///////////////////////////////////////
             /// Carga la tienda en una variable ///
             ///////////////////////////////////////
-            List<ObjetoTienda> lista = Tienda.mostrarTienda();
-            int cont = 0;
+            Tienda.pedirtienda();
+            
+            List<ObjetoTienda> frutas = Tienda.frutas;
+            List<ObjetoTienda> verduras = Tienda.Verduras; 
+            List<ObjetoTienda> vegetales = Tienda.Vegetales; 
+            List<ObjetoTienda> legumbres = Tienda.Legumbres; 
+            List<ObjetoTienda> tuberculos = Tienda.Tubérculos; 
+            List<ObjetoTienda> semillas = Tienda.Semillas; 
+            List<ObjetoTienda> hortalizas = Tienda.Hortalizas; 
+            int cont1 = 0; 
+            int cont2 = 0; 
+            int cont3 = 0; 
+            int cont4 = 0;
+            int cont5 = 0; 
+            int cont6 = 0; 
+            int cont7 = 0;
         %>
         
         <div class="Primario">
@@ -55,110 +69,123 @@
                 <button id="botonEncabezado">Ver Orden</button>
             </div>
 
-            
-            
             <div class="barralateralIzq">
                 <h1 id="textoGrande">Categorias</h1>
-                <button id="cajaCategoria">  Frutas     </button>
-                <button id="cajaCategoria">  Verduras   </button>
-                <button id="cajaCategoria">  Vegetales  </button>
-                <button id="cajaCategoria">  Legumbres  </button>
-                <button id="cajaCategoria">  Tubérculos </button>
-                <button id="cajaCategoria">  Semillas   </button>
-                <button id="cajaCategoria">  Hortalizas </button>
+                <button id="cajaCategoria" onclick="mostrarZonaFrutas()">  Frutas     </button>
+                <button id="cajaCategoria" onclick="mostrarZonaVerduras()">  Verduras   </button>
+                <button id="cajaCategoria" onclick="mostrarZonaVegetales()">  Vegetales  </button>
+                <button id="cajaCategoria" onclick="mostrarZonaLegumbres()">  Legumbres  </button>
+                <button id="cajaCategoria" onclick="mostrarZonaTuberculos()">  Tubérculos </button>
+                <button id="cajaCategoria" onclick="mostrarZonaSemillas()">  Semillas   </button>
+                <button id="cajaCategoria" onclick="mostrarZonaHortalizas()">  Hortalizas </button>
             </div>
             
             <div class="contenido" id="cont">
                 <h1 id="textoGrande2">Tienda</h1>
                 
-  
-                   
-                <form id="objetoTienda">
-                    <h3 id="txtoProducto">Nombre del producto</h3>
-                    <h4 id="txtoProducto">Valor por Unidad</h4>
-                    <img id="imgProducto" src="https://lpcdedios.files.wordpress.com/2013/11/bananas-01.jpg"/>
-                    <input type="number"  max="100" min="0" id="selector" required="required"/><p id="unidad">Kg</p>
-                    <input type="submit" value="Agregar" id="boton2"/>
-                </form>
-                <form id="objetoTienda">
-                    <h3 id="txtoProducto">Nombre del producto</h3>
-                    <h4 id="txtoProducto">Valor por Unidad</h4>
-                    <img id="imgProducto" src="https://lpcdedios.files.wordpress.com/2013/11/bananas-01.jpg"/>
-                    <input type="number"  max="100" min="0" id="selector" required="required"/><p id="unidad">Kg</p>
-                    <input type="submit" value="Agregar" id="boton2"/>
-                </form>
-                <form id="objetoTienda">
-                    <h3 id="txtoProducto">Nombre del producto</h3>
-                    <h4 id="txtoProducto">Valor por Unidad</h4>
-                    <img id="imgProducto" src="https://lpcdedios.files.wordpress.com/2013/11/bananas-01.jpg"/>
-                    <input type="number"  max="100" min="0" id="selector" required="required"/><p id="unidad">Kg</p>
-                    <input type="submit" value="Agregar" id="boton2"/>
-                </form>
-                <form id="objetoTienda">
-                    <h3 id="txtoProducto">Nombre del producto</h3>
-                    <h4 id="txtoProducto">Valor por Unidad</h4>
-                    <img id="imgProducto" src="https://lpcdedios.files.wordpress.com/2013/11/bananas-01.jpg"/>
-                    <input type="number"  max="100" min="0" id="selector" required="required"/><p id="unidad">Kg</p>
-                    <input type="submit" value="Agregar" id="boton2"/>
-                </form>
-                <form id="objetoTienda">
-                    <h3 id="txtoProducto">Nombre del producto</h3>
-                    <h4 id="txtoProducto">Valor por Unidad</h4>
-                    <img id="imgProducto" src="https://lpcdedios.files.wordpress.com/2013/11/bananas-01.jpg"/>
-                    <input type="number"  max="100" min="0" id="selector" required="required"/><p id="unidad">Kg</p>
-                    <input type="submit" value="Agregar" id="boton2"/>
-                </form>
-                <form id="objetoTienda">
-                    <h3 id="txtoProducto">Nombre del producto</h3>
-                    <h4 id="txtoProducto">Valor por Unidad</h4>
-                    <img id="imgProducto" src="https://lpcdedios.files.wordpress.com/2013/11/bananas-01.jpg"/>
-                    <input type="number"  max="100" min="0" id="selector" required="required"/><p id="unidad">Kg</p>
-                    <input type="submit" value="Agregar" id="boton2"/>
-                </form>
-                <form id="objetoTienda">
-                    <h3 id="txtoProducto">Nombre del producto</h3>
-                    <h4 id="txtoProducto">Valor por Unidad</h4>
-                    <img id="imgProducto" src="https://lpcdedios.files.wordpress.com/2013/11/bananas-01.jpg"/>
-                    <input type="number"  max="100" min="0" id="selector" required="required"/><p id="unidad">Kg</p>
-                    <input type="submit" value="Agregar" id="boton2"/>
-                </form>
-                <form id="objetoTienda">
-                    <h3 id="txtoProducto">Nombre del producto</h3>
-                    <h4 id="txtoProducto">Valor por Unidad</h4>
-                    <img id="imgProducto" src="https://lpcdedios.files.wordpress.com/2013/11/bananas-01.jpg"/>
-                    <input type="number"  max="100" min="0" id="selector" required="required"/><p id="unidad">Kg</p>
-                    <input type="submit" value="Agregar" id="boton2"/>
-                </form>
-                <form id="objetoTienda">
-                    <h3 id="txtoProducto">Nombre del producto</h3>
-                    <h4 id="txtoProducto">Valor por Unidad</h4>
-                    <img id="imgProducto" src="https://lpcdedios.files.wordpress.com/2013/11/bananas-01.jpg"/>
-                    <input type="number"  max="100" min="0" id="selector" required="required"/><p id="unidad">Kg</p>
-                    <input type="submit" value="Agregar" id="boton2"/>
-                </form>
-                <form id="objetoTienda">
-                    <h3 id="txtoProducto">Nombre del producto</h3>
-                    <h4 id="txtoProducto">Valor por Unidad</h4>
-                    <img id="imgProducto" src="https://lpcdedios.files.wordpress.com/2013/11/bananas-01.jpg"/>
-                    <input type="number"  max="100" min="0" id="selector" required="required"/><p id="unidad">Kg</p>
-                    <input type="submit" value="Agregar" id="boton2"/>
-                </form>
+                <div id="ZonaFrutas">
+                    <c:forEach var="i" begin="<%=cont1%>" end="<%=frutas.size()-1%>">
+                        <form id="objetoTienda" name="">
+                            <h3 id="txtoProducto"><%=frutas.get(cont1).nombre%></h3>
+                            <h4 id="txtoProducto"><%=frutas.get(cont1).precio%> por <%=frutas.get(cont1).unidad%></h4>
+                            <img id="imgProducto" src="https://lpcdedios.files.wordpress.com/2013/11/bananas-01.jpg"/>
+                            <input type="number"  max="100" min="0" id="selector" required="required"/><p id="unidad"><%=frutas.get(cont1).unidad%></p>
+                            <input type="submit" value="Agregar" id="boton2"/>
+                        </form> 
+                        <p style="display: none"><%=  cont1 += 1 %></p>
+                    </c:forEach>
+                </div>
+                
+                <div id="ZonaVerduras">
+                    <c:forEach var="i" begin="<%=cont2%>" end="<%=verduras.size()-1%>">
+                        <form id="objetoTienda" name="">
+                            <h3 id="txtoProducto"><%=verduras.get(cont2).nombre%></h3>
+                            <h4 id="txtoProducto"><%=verduras.get(cont2).precio%> por <%=verduras.get(cont2).unidad%></h4>
+                            <img id="imgProducto" src="https://lpcdedios.files.wordpress.com/2013/11/bananas-01.jpg"/>
+                            <input type="number"  max="100" min="0" id="selector" required="required"/><p id="unidad">
+                            <%=verduras.get(cont2).unidad%></p>
+                            <input type="submit" value="Agregar" id="boton2"/>
+                        </form> 
+                        <p style="display: none"><%=  cont2 += 1 %></p>
+                    </c:forEach>
+                </div>
+                
+                <div id="ZonaVegetales">
+                    <c:forEach var="i" begin="<%=cont3%>" end="<%=vegetales.size()-1%>">
+                        <form id="objetoTienda" name="">
+                            <h3 id="txtoProducto"><%=vegetales.get(cont3).nombre%></h3>
+                            <h4 id="txtoProducto"><%=vegetales.get(cont3).precio%> por <%=vegetales.get(cont3).unidad%></h4>
+                            <img id="imgProducto" src="https://lpcdedios.files.wordpress.com/2013/11/bananas-01.jpg"/>
+                            <input type="number"  max="100" min="0" id="selector" required="required"/><p id="unidad">
+                            <%=vegetales.get(cont3).unidad%></p>
+                            <input type="submit" value="Agregar" id="boton2"/>
+                        </form> 
+                        <p style="display: none"><%=  cont3 += 1 %></p>
+                    </c:forEach>
+                </div>
+                
+                <div id="ZonaLegumbres">
+                    <c:forEach var="i" begin="<%=cont4%>" end="<%=legumbres.size()-1%>">
+                        <form id="objetoTienda" name="">
+                            <h3 id="txtoProducto"><%=legumbres.get(cont4).nombre%></h3>
+                            <h4 id="txtoProducto"><%=legumbres.get(cont4).precio%> por <%=legumbres.get(cont4).unidad%></h4>
+                            <img id="imgProducto" src="https://lpcdedios.files.wordpress.com/2013/11/bananas-01.jpg"/>
+                            <input type="number"  max="100" min="0" id="selector" required="required"/><p id="unidad">
+                            <%=legumbres.get(cont4).unidad%></p>
+                            <input type="submit" value="Agregar" id="boton2"/>
+                        </form> 
+                        <p style="display: none"><%=  cont4 += 1 %></p>
+                    </c:forEach>
+                </div>
+                
+                <div id="ZonaTuberculos">
+                    <c:forEach var="i" begin="<%=cont5%>" end="<%=tuberculos.size()-1%>">
+                        <form id="objetoTienda" name="">
+                            <h3 id="txtoProducto"><%=tuberculos.get(cont5).nombre%></h3>
+                            <h4 id="txtoProducto"><%=tuberculos.get(cont5).precio%> por <%=tuberculos.get(cont5).unidad%></h4>
+                            <img id="imgProducto" src="https://lpcdedios.files.wordpress.com/2013/11/bananas-01.jpg"/>
+                            <input type="number"  max="100" min="0" id="selector" required="required"/><p id="unidad">
+                            <%=tuberculos.get(cont5).unidad%></p>
+                            <input type="submit" value="Agregar" id="boton2"/>
+                        </form> 
+                        <p style="display: none"><%=  cont5 += 1 %></p>
+                    </c:forEach>
+                </div>
+                
+                <div id="ZonaSemillas">
+                    <c:forEach var="i" begin="<%=cont6%>" end="<%=semillas.size()-1%>">
+                        <form id="objetoTienda" name="">
+                            <h3 id="txtoProducto"><%=semillas.get(cont6).nombre%></h3>
+                            <h4 id="txtoProducto"><%=semillas.get(cont6).precio%> por <%=semillas.get(cont6).unidad%></h4>
+                            <img id="imgProducto" src="https://lpcdedios.files.wordpress.com/2013/11/bananas-01.jpg"/>
+                            <input type="number"  max="100" min="0" id="selector" required="required"/><p id="unidad">
+                            <%=semillas.get(cont6).unidad%></p>
+                            <input type="submit" value="Agregar" id="boton2"/>
+                        </form> 
+                        <p style="display: none"><%=  cont6 += 1 %></p>
+                    </c:forEach>
+                </div>
+                
+                <div id="ZonaHortalizas">
+                    <c:forEach var="i" begin="<%=cont7%>" end="<%=hortalizas.size()-1%>">
+                        <form id="objetoTienda" name="">
+                            <h3 id="txtoProducto"><%=hortalizas.get(cont7).nombre%></h3>
+                            <h4 id="txtoProducto"><%=hortalizas.get(cont7).precio%> por <%=hortalizas.get(cont7).unidad%></h4>
+                            <img id="imgProducto" src="https://lpcdedios.files.wordpress.com/2013/11/bananas-01.jpg"/>
+                            <input type="number"  max="100" min="0" id="selector" required="required"/><p id="unidad">
+                            <%=hortalizas.get(cont7).unidad%></p>
+                            <input type="submit" value="Agregar" id="boton2"/>
+                        </form> 
+                        <p style="display: none"><%=  cont7 += 1 %></p>
+                    </c:forEach>
+                </div>
                 
             </div>   
             
         </div>
         <h1>Tienda</h1>
         
-        <c:forEach var="i" begin="<%=cont%>" end="<%=lista.size()-1%>">
-
-            <!-- Por cada elemento debo hacer un form -->
-            <p> <%=lista.get(cont).nombre%> </p>
-            
-            
-
-            <!-- este es el contador del bloque -->
-            <p style="display: none"><%=  cont += 1 %></p>
-        </c:forEach>
+      
         
             
     </body>
