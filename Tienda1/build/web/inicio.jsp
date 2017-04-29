@@ -17,36 +17,12 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <% 
-            //////////////////////////////////////////////////////////////
-            /// Hace las verificaciones del usuario que desea ingresar ///
-            //////////////////////////////////////////////////////////////
-            String user = request.getParameter("user");
-            String pass  = request.getParameter("pass");
-            if (user.equals("") || pass.equals("")) {
-                session.setAttribute("msj", "Digite los datos correctamente");
-                response.sendRedirect("index.jsp");}
-            // crea el usurio y verifica si existe en la base 
-            SessionActual actual = new SessionActual(user, pass);
-            String resultado = actual.verificarUsuario();
-            SessionActual usuarioActual;
-            if (resultado == "true") {
-                session.setAttribute("usuarioActual", actual);
-                usuarioActual = (SessionActual)session.getAttribute("usuarioActual");
-            }
-            else{
-                session.setAttribute("msj", "Usuario NO registrado");
-                response.sendRedirect("index.jsp");
-                usuarioActual = new SessionActual("", "");}   
-            
-        %>
-
         <%
+            SessionActual usuarioActual = (SessionActual)session.getAttribute("usuarioActual");
             ///////////////////////////////////////
             /// Carga la tienda en una variable ///
             ///////////////////////////////////////
             Tienda.pedirtienda();
-            
             List<ObjetoTienda> frutas = Tienda.frutas;
             List<ObjetoTienda> verduras = Tienda.Verduras; 
             List<ObjetoTienda> vegetales = Tienda.Vegetales; 
@@ -61,15 +37,23 @@
             int cont5 = 0; 
             int cont6 = 0; 
             int cont7 = 0;
+            
+            int cont8 = 1;
+            int finalizar = 0;
+            if (Tienda.orden.size() > 0) {
+                finalizar = Tienda.orden.size();
+            }
+            
+
         %>
         
         <div class="Primario">
             <div class="encabezado">
-                <h3 id="textoIzq">Bienvenido a Nombre de tienda Nombre de usuario</h3>
+                <h3 id="textoIzq">Bienvenido a nombre de tienda <%=usuarioActual.user%></h3>
                 <button id="botonEncabezado">Salir</button>
                 <button id="botonEncabezado">Login</button>
                 <button id="botonEncabezado">Pedir</button>
-                <button id="botonEncabezado">Ver Orden</button>
+                <button id="botonEncabezado" onclick="mostrarOrden()">Ver Orden</button>
             </div>
 
             <div class="barralateralIzq">
@@ -204,6 +188,28 @@
                         <p style="display: none"><%=  cont7 += 1 %></p>
                     </c:forEach>
                 </div>
+                
+                
+                
+    
+                <div id="ordenOculta">
+                    <c:forEach var="i" begin="<%=cont8%>" end="<%=finalizar%>">
+                        <div id="contenedorProcOrden">
+                                <form action="Operaciones/EliminarEnOrden.jsp">
+                                    <div id="textoporden1"><%=Tienda.orden.get(cont8 -1).nombre%></div>
+                                    <div id="textoporden2"><%=Tienda.orden.get(cont8 -1).precio%></div>
+                                    <div id="textoporden3"><input id="textoporden7" type="number" name="cantidad" value="<%=Tienda.orden.get(cont8 -1).cantidad%>" min="0" max="100"/></div>    
+                                    <div id="textoporden4"><%=Tienda.orden.get(cont8 -1).unidad%></div>
+                                    <div id="textoporden6"><%=Tienda.orden.get(cont8 -1).precio * Tienda.orden.get(cont8 -1).cantidad %></div>
+                                    <input type="text" style="display: none" name="nombre" value="<%=Tienda.orden.get(cont8 -1).nombre%>"/>
+                                    <input type="text" style="display: none" name="precio" value="<%=Tienda.orden.get(cont8 -1).precio%>"/>
+                                    <input type="text" style="display: none" name="unidad" value="<%=Tienda.orden.get(cont8 -1).unidad%>"/>
+                                    <input id="textoporden5" type="submit" value="Modificar" />
+                                </form> 
+                            </div>
+                        <p style="display: none"><%=  cont8 += 1 %></p>
+                    </c:forEach>
+                </div>  
             </div>   
         </div>   
     </body>

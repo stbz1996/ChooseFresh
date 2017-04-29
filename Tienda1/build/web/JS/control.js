@@ -7,6 +7,8 @@ function mostrarZonaFrutas(){
     $("#ZonaTuberculos").css("display", "none");
     $("#ZonaSemillas").css("display", "none");
     $("#ZonaHortalizas").css("display", "none");
+    $("#ordenOculta").css("display", "none");
+    $("#textoGrande2").text("Tienda");
 }
 
 function mostrarZonaVerduras(){
@@ -17,6 +19,8 @@ function mostrarZonaVerduras(){
     $("#ZonaTuberculos").css("display", "none");
     $("#ZonaSemillas").css("display", "none");
     $("#ZonaHortalizas").css("display", "none");
+    $("#ordenOculta").css("display", "none");
+    $("#textoGrande2").text("Tienda");
 }
 
 function mostrarZonaVegetales(){
@@ -27,6 +31,8 @@ function mostrarZonaVegetales(){
     $("#ZonaTuberculos").css("display", "none");
     $("#ZonaSemillas").css("display", "none");
     $("#ZonaHortalizas").css("display", "none");
+    $("#ordenOculta").css("display", "none");
+    $("#textoGrande2").text("Tienda");
 }
 
 
@@ -38,6 +44,8 @@ function mostrarZonaLegumbres(){
     $("#ZonaTuberculos").css("display", "none");
     $("#ZonaSemillas").css("display", "none");
     $("#ZonaHortalizas").css("display", "none");
+    $("#ordenOculta").css("display", "none");
+    $("#textoGrande2").text("Tienda");
 }
 
 function mostrarZonaTuberculos(){
@@ -48,6 +56,8 @@ function mostrarZonaTuberculos(){
     $("#ZonaTuberculos").css("display", "block");
     $("#ZonaSemillas").css("display", "none");
     $("#ZonaHortalizas").css("display", "none");
+    $("#ordenOculta").css("display", "none");
+    $("#textoGrande2").text("Tienda");
 }
 
 function mostrarZonaSemillas(){
@@ -58,6 +68,8 @@ function mostrarZonaSemillas(){
     $("#ZonaTuberculos").css("display", "none");
     $("#ZonaSemillas").css("display", "block");
     $("#ZonaHortalizas").css("display", "none");
+    $("#ordenOculta").css("display", "none");
+    $("#textoGrande2").text("Tienda");
 }
 
 function mostrarZonaHortalizas(){
@@ -68,4 +80,18 @@ function mostrarZonaHortalizas(){
     $("#ZonaTuberculos").css("display", "none");
     $("#ZonaSemillas").css("display", "none");
     $("#ZonaHortalizas").css("display", "block");
+    $("#ordenOculta").css("display", "none");
+    $("#textoGrande2").text("Tienda");
+}
+
+function mostrarOrden(){
+    $("#ZonaFrutas").css("display", "none");
+    $("#ZonaVerduras").css("display", "none");
+    $("#ZonaVegetales").css("display", "none");
+    $("#ZonaLegumbres").css("display", "none");
+    $("#ZonaTuberculos").css("display", "none");
+    $("#ZonaSemillas").css("display", "none");
+    $("#ZonaHortalizas").css("display", "none");
+    $("#ordenOculta").css("display", "block");
+    $("#textoGrande2").text("Mi Orden");
 }

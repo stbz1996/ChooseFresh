@@ -13,7 +13,7 @@
         <div class="login">
             <h1>Login</h1>
             <div class="part1">
-                <form method="POST" action="inicio.jsp">
+                <form method="POST" action="session.jsp">
                     <p>Username</p> 
                     <input class="campoTexto" type="text" maxlength="20" minlength="4" name="user"/>
                     <br><br>

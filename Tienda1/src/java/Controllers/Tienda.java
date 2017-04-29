@@ -13,20 +13,38 @@ public class Tienda {
     public static List<ObjetoTienda> Hortalizas = new ArrayList<>();
     public static List<productoOrden> orden = new ArrayList<>();
     
+    
     public static void agregarEnOrden(productoOrden proc){
-        String buscar = proc.nombre;
-        for (int i = 0; i < orden.size()-1; i++) {
-            if (orden.get(i).nombre.equals(buscar)) {
-                orden.remove(i);
+        int index = -1;
+        for (productoOrden x : Tienda.orden) {
+            if (x.nombre.equals(proc.nombre)) {
+                index = Tienda.orden.indexOf(x);
+                break;
             }
         }
-        orden.add(proc);
+        if ((proc.cantidad > 0) && (index == -1)) {
+            orden.add(proc);    
+        } 
+        if ((proc.cantidad > 0) && (index != -1)) {
+            orden.remove(index);
+            orden.add(proc);  
+        }
     }
+    
+    
     
     public static void pedirtienda(){
         // esto va a contener todo el listado que viene desde la base
         // solo haga sus cositas y deje en la variable tienda todo la vara jaja nada mas, 
         // el resto se hace solo
+        Tienda.frutas.clear();
+        Tienda.Verduras.clear();
+        Tienda.Vegetales.clear();
+        Tienda.Legumbres.clear();
+        Tienda.Tubérculos.clear();
+        Tienda.Semillas.clear();
+        Tienda.Hortalizas.clear();
+        
         List<ObjetoTienda> lista = new ArrayList<>();
         lista.add(new ObjetoTienda("Bananos", 1522, "Kg", "Frutas", ""));
         lista.add(new ObjetoTienda("Sandia", 4520, "Kg", "Frutas", ""));
