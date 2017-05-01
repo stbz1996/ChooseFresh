@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class objetosTienda {
+    
+    private List<ObjetoTienda> lista;
+    
     public objetosTienda(){}
     
     public List<ObjetoTienda> retornarTienda(){
