@@ -52,7 +52,6 @@
                 <!TODO: En vez de usuario poner nombre y apellido>
                 <h3 id="textoIzq">Bienvenido a la tienda <%=usuarioActual.user%></h3>
                 <button id="botonEncabezado">Salir</button>
-                <button id="botonEncabezado">Login</button>
                 <button id="botonEncabezado">Pedir</button>
                 <button id="botonEncabezado" onclick="mostrarOrden()">Ver Orden</button>
             </div>
