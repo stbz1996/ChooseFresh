@@ -13,11 +13,18 @@ import Conection.OracleConection;
  */
 public class AgregarProducto {
     
-    private int idProducto;
+    private int variable;
+    private final int idProducto;
     private static int contador = 1;
+    
     public AgregarProducto(){
         idProducto = contador;
         contador++;
+    }
+    
+    public AgregarProducto(int variable){
+        this.variable = variable;
+        idProducto = contador;
     }
     
     public boolean crearProducto(String nombre, int precio, String unidad, String categoria, String imagen){
@@ -37,4 +44,6 @@ public class AgregarProducto {
         }
         
     }
+    
+    public int getContador(){return contador;}
 }

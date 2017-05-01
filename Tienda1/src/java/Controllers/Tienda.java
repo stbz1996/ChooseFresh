@@ -1,6 +1,7 @@
 
 package Controllers;
 import Model.AgregarProducto;
+import Model.ObtenerProductos;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -83,6 +84,11 @@ public class Tienda {
         AgregarProducto agregarProducto = new AgregarProducto();
         int newPrecio = Integer.parseInt(precio);
         return agregarProducto.crearProducto(nombre, newPrecio, unidad, categoria, img);
+    }
+    
+    public ArrayList<ObjetoTienda> consultarProductos(){
+        ObtenerProductos obtenerProductos = new ObtenerProductos();
+        return obtenerProductos.consultarProductos();
     }
 
 }
