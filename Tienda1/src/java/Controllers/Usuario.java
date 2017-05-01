@@ -1,5 +1,7 @@
 package Controllers;
 
+import Model.AgregarUsuario;
+
 public class Usuario {
     public String nombre = "";
     public String apellido = "";
@@ -15,12 +17,10 @@ public class Usuario {
         this.contrasena = contrasena;
     }
     
-    public String crearUsuario(){
+    public Boolean crearUsuario(){
         // manda a verificar a la base 
-        boolean estado = true;
-        if (estado) {
-            return "true";
-        }
-        return "false";
+        
+        AgregarUsuario agregarUsuario = new AgregarUsuario(nombre,apellido,username,email,contrasena,true);
+        return agregarUsuario.crearUsuario();
     }
 }

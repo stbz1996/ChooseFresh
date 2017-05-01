@@ -2,9 +2,9 @@
 package Controllers;
 
 public class productoOrden {
-    public String nombre ;
-    public int precio ;
-    public int cantidad ;
+    public String nombre;
+    public int precio;
+    public int cantidad;
     public String unidad;
 
     public productoOrden(String nombre, String precio, String cantidad, String unidad) {

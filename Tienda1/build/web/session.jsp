@@ -13,12 +13,12 @@
             if (user.equals("") || pass.equals("")) {
                 session.setAttribute("msj", "Digite los datos correctamente");
                 response.sendRedirect("index.jsp");}
-            // crea el usurio y verifica si existe en la base 
+            // crea el usuario y verifica si existe en la base 
             SessionActual actual = new SessionActual(user, pass);
-            String resultado = actual.verificarUsuario();
+            Boolean resultado = actual.verificarUsuario();
             SessionActual usuarioActual;
             
-            if (resultado == "true") {
+            if (resultado == true) {
                 session.setAttribute("usuarioActual", actual);
                 response.sendRedirect("inicio.jsp");
             }

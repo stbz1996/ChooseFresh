@@ -13,8 +13,8 @@
             }            
             else{
                 Usuario actual = new Usuario(nombre, apellido, username, mail, pass1);
-                String resultado = actual.crearUsuario();
-                if (resultado == "true") {
+                Boolean resultado = actual.crearUsuario();
+                if (resultado == true) {
                     session.setAttribute("msj", "Se ha creado el usuario");
                     session.setAttribute("usuario", actual);
                 }
