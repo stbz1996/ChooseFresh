@@ -76,6 +76,10 @@ public class Tienda {
         if (Hortalizas.isEmpty()) {Hortalizas.add(new ObjetoTienda("No disponible", 0, "Kg", "Hortalizas", ""));}
     }
         
-        
+       
     
+    public boolean agregarProducto(String nombre, String precio, String unidad, String categoria, String img){
+        return true;
+    }
+
 }

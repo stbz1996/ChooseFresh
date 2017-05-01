@@ -43,8 +43,7 @@
             int cont8 = 1;
             int finalizar = 0;
             if (Tienda.orden.size() > 0) {finalizar = Tienda.orden.size();}
-            
-
+           
         %>
         
         <div class="Primario">
