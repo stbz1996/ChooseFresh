@@ -23,7 +23,7 @@
                 session.setAttribute("msj", "El producto ha sido creado");
             }
             else{
-                session.setAttribute("msj", "Digite los datos correctamente");
+                session.setAttribute("msj", "No se logró insertar el producto");
             }
             response.sendRedirect("modeloProducto.jsp");
                

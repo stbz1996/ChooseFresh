@@ -159,9 +159,10 @@ public class OracleConection {
     
     
     
+    
     public void agregarProducto(Parametro[] parametros){
         int idProducto = getIdProducto();
-        String keyString = "producto" + idProducto;                             //Nombre de la llave a usar
+        String keyString = "producto" + idProducto +1;                             //Nombre de la llave a usar
         final Schema catalogSchema = parser.getTypes().get("basedatos.proyecto.producto");//Obtener mapa de los tipos definidos en el esquema
         jsonBinding = avroCatalog.getJsonBinding(catalogSchema);                //Se crea una interfaz que es usada para la serializacion de los valores
         JsonRecord jsonRecord = new JsonRecord(objectNode, catalogSchema);      //Almacena los diferentes campos que se crearon en el schema
@@ -174,6 +175,15 @@ public class OracleConection {
         
         store.put(Key.createKey(keyString),jsonBinding.toValue(jsonRecord));    //Se almacena en la base de datos
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     public ObjetoTienda consultarProducto(int idProducto){
         
@@ -205,7 +215,7 @@ public class OracleConection {
     public ArrayList<ObjetoTienda> consultarProductos(){
         try{
             //TODO:Buscar forma para usar archivos en lugar del path
-            parser.parse(new File("C:\\Users\\usuaria\\Downloads\\schemaProducto.avsc"));
+            parser.parse(new File("C:\\Users\\stbz1\\Downloads\\Oracle NoSql\\schemaProducto.avsc"));
         }catch(IOException ex){
             ex.printStackTrace();
         }
