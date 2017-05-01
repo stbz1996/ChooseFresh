@@ -4,8 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class objetosTienda {
+   
     
     public static List<ObjetoTienda> lista = new ArrayList<>();
+    
+    public objetosTienda(){}
+
+    
+    
     
 
     public static List<ObjetoTienda> retornarTienda(){

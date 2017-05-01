@@ -5,6 +5,7 @@ import Controllers.ObjetoTienda;
 import Model.*;
 import java.io.File;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 import org.apache.avro.Schema;
@@ -158,29 +159,21 @@ public class OracleConection {
     
     
     
-    public void agregarProducto(Parametro[] parametros, int idProducto){
-        try{
-            //TODO:Buscar forma para usar archivos en lugar del path
-            parser.parse(new File("C:\\Users\\stbz1\\Downloads\\Oracle NoSql\\schemaProducto.avsc"));
-        }catch(IOException ex){
-            ex.printStackTrace();
-        }
+    public void agregarProducto(Parametro[] parametros){
+        int idProducto = getIdProducto();
         String keyString = "producto" + idProducto;                             //Nombre de la llave a usar
         final Schema catalogSchema = parser.getTypes().get("basedatos.proyecto.producto");//Obtener mapa de los tipos definidos en el esquema
         jsonBinding = avroCatalog.getJsonBinding(catalogSchema);                //Se crea una interfaz que es usada para la serializacion de los valores
         JsonRecord jsonRecord = new JsonRecord(objectNode, catalogSchema);      //Almacena los diferentes campos que se crearon en el schema
         
         //Se dan los valores a los campos
+        objectNode.put("idProducto", idProducto);
         for (Parametro parametro:parametros){
             objectNode.put(parametro.getNombre(),parametro.getValor());
         }
         
         store.put(Key.createKey(keyString),jsonBinding.toValue(jsonRecord));    //Se almacena en la base de datos
     }
-    
-    
-    
-    
     
     public ObjetoTienda consultarProducto(int idProducto){
         
@@ -219,14 +212,31 @@ public class OracleConection {
         final Schema catalogSchema = parser.getTypes().get("basedatos.proyecto.producto");
         jsonBinding = avroCatalog.getJsonBinding(catalogSchema);
         ArrayList<ObjetoTienda> productos = new ArrayList<>();
-        AgregarProducto producto = new AgregarProducto(1);
         ObjetoTienda productoTienda;
-        
-        for (int i = 1; i <= producto.getContador(); i++){
-            productoTienda = consultarProducto(i);
-            productos.add(productoTienda);
+        int idProducto = 1;
+        try{
+            while (true){
+                String keyString = "producto" + idProducto;                             //Nombre de la llave a usar
+                ValueVersion valueVersion = store.get(Key.createKey(keyString));
+                
+                JsonRecord jsonRecord = jsonBinding.toObject(valueVersion.getValue());
+                JsonNode jsonNode = jsonRecord.getJsonNode();
+                String nombre = jsonNode.get("nombre").getTextValue();
+                int precio = Integer.parseInt(jsonNode.get("precio").getTextValue());
+                String categoria = jsonNode.get("categoria").getTextValue();
+                String unidad = jsonNode.get("unidad").getTextValue();
+                String imagen = jsonNode.get("imagen").getTextValue();        
+                productoTienda = new ObjetoTienda(nombre, precio, unidad, categoria,imagen);
+                productos.add(productoTienda);
+                idProducto ++;
+            }
+        }catch(Exception e){
+            return productos;
         }
-        return productos;
         //los que van al for(Key, valueVersion, jsonRecord, jsonNode, parametros)
+    }
+    
+    public int getIdProducto(){
+        return consultarProductos().size() + 1;
     }
 }
