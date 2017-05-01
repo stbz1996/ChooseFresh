@@ -2,6 +2,7 @@
 package Controllers;
 import Model.AgregarProducto;
 import Model.ObtenerProductos;
+import Model.objetosTienda;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,11 +48,9 @@ public class Tienda {
         Tienda.Semillas.clear();
         Tienda.Hortalizas.clear();
         
+        objetosTienda tienda = new objetosTienda();
         List<ObjetoTienda> lista = new ArrayList<>();
-        lista.add(new ObjetoTienda("Bananos", 1522, "Kg", "Frutas", "http://eva.hn/wp-content/uploads/2014/01/bananasA.jpg"));
-
-        
-        
+        lista = tienda.retornarTienda();
         
         for (int i = 0; i < lista.size(); i++) {
             ObjetoTienda nuevo = lista.get(i);
