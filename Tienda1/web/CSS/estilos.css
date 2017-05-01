@@ -275,6 +275,38 @@ body{
 }
 
 
+#boton3{
+    width: 40%;
+    float: left;
+    border-radius: 15px;
+    margin: 1% 0% 2% 30%;
+    padding: 1%;
+    font-size: 15px;
+}
+
+#crearProducto{
+    width: 12%;
+    float: left;
+    margin-left: 30%;
+    margin-right: 2%;
+}
+#camposAllenar{
+    width: 40%;
+    float: left;
+    margin-top: 3%;
+    
+}
+#camposAllenar input{
+    margin-bottom: 6.3%;
+    border-radius: 10px;
+    font-size: 15px;
+}
+#camposAllenar select{
+    margin-bottom: 6.3%;
+    border-radius: 10px;
+    font-size: 15px;
+    width: 40%;
+}
 /*--- Animaciones ---*/
 @keyframes animar{
 	from{transform: rotateY(0deg);}
