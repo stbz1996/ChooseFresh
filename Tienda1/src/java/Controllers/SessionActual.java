@@ -1,5 +1,6 @@
             package Controllers;
 
+import Model.VerificarAdministrador;
 import Model.VerificarUsuario;
 
 
@@ -15,5 +16,10 @@ public class SessionActual {
     public boolean verificarUsuario(){
         VerificarUsuario verifica = new VerificarUsuario(user,pass);
         return verifica.consultarUsuario();
+    }
+    
+    public boolean verificarAdministrador(){
+        VerificarAdministrador verificarAdministrador = new VerificarAdministrador(user,pass);
+        return verificarAdministrador.consultarAdministrador();
     }
 }
