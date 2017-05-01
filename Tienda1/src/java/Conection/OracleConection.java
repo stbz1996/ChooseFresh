@@ -40,6 +40,10 @@ public class OracleConection {
         objectNode = JsonNodeFactory.instance.objectNode();
     }
     
+    //Cuando vamos a realizar los cambios de direccion
+    //Path de Jorge = C:\\Users\\usuaria\\Downloads\\
+    //Path de Steven = C:\\Users\\stbz1\\Downloads\\Oracle NoSql\\
+    
     public void agregarUsuario(Parametro[] parametros, String usuario){
         
         //Obtener archivo con la estructura de la llave

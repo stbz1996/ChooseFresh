@@ -1,5 +1,6 @@
 
 package Controllers;
+import Model.AgregarProducto;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -79,7 +80,9 @@ public class Tienda {
        
     
     public boolean agregarProducto(String nombre, String precio, String unidad, String categoria, String img){
-        return true;
+        AgregarProducto agregarProducto = new AgregarProducto();
+        int newPrecio = Integer.parseInt(precio);
+        return agregarProducto.crearProducto(nombre, newPrecio, unidad, categoria, img);
     }
 
 }
