@@ -38,11 +38,11 @@
             int cont6 = 0; 
             int cont7 = 0;
             
+            
+            // hace el for
             int cont8 = 1;
             int finalizar = 0;
-            if (Tienda.orden.size() > 0) {
-                finalizar = Tienda.orden.size();
-            }
+            if (Tienda.orden.size() > 0) {finalizar = Tienda.orden.size();}
             
 
         %>
@@ -50,8 +50,11 @@
         <div class="Primario">
             <div class="encabezado">
                 <!TODO: En vez de usuario poner nombre y apellido>
-                <h3 id="textoIzq">Bienvenido a la tienda <%=usuarioActual.user%></h3>
+                <h3 id="textoIzq">Bienvenido a ChooseFresh <%=usuarioActual.user%></h3>
+                
+                <form method="POST" action="Operaciones/CerrarSession.jsp">
                 <button id="botonEncabezado">Salir</button>
+                </form>>
                 <button id="botonEncabezado">Pedir</button>
                 <button id="botonEncabezado" onclick="mostrarOrden()">Ver Orden</button>
             </div>
