@@ -67,6 +67,9 @@ public class OracleConection {
         store.put(Key.createKey(keyString),jsonBinding.toValue(jsonRecord));    //Se almacena en la base de datos
     }
     
+    
+    
+    
     public Parametro[] consultaUsuario(String usuario){
         
         try{
@@ -96,6 +99,9 @@ public class OracleConection {
         return parametros;
     }    
     
+    
+    
+    
     public void agregarAdministrador(Parametro[] parametros, String usuario){
         //Obtener archivo con la estructura de la llave
         try{
@@ -118,15 +124,18 @@ public class OracleConection {
         store.put(Key.createKey(keyString),jsonBinding.toValue(jsonRecord));
     }
     
+    
+    
+    
     public Parametro[] consultarAdministrador(String usuario){
         try{
             //TODO:Buscar forma para usar archivos en lugar del path
-            parser.parse(new File("C:\\Users\\usuaria\\Downloads\\schemaAdministrador.avsc"));
+            parser.parse(new File("C:\\Users\\stbz1\\Downloads\\Oracle NoSql\\schemaAdministrador.avsc"));
         }catch(IOException ex){
             ex.printStackTrace();
         }
         
-        String keyString = "producto" + usuario;
+        String keyString = "administrador" + usuario;
         final Schema catalogSchema = parser.getTypes().get("basedatos.proyecto.administrador");
         jsonBinding = avroCatalog.getJsonBinding(catalogSchema);
         
@@ -146,10 +155,13 @@ public class OracleConection {
         return parametros;
     }
     
+    
+    
+    
     public void agregarProducto(Parametro[] parametros, int idProducto){
         try{
             //TODO:Buscar forma para usar archivos en lugar del path
-            parser.parse(new File("C:\\Users\\usuaria\\Downloads\\schemaProducto.avsc"));
+            parser.parse(new File("C:\\Users\\stbz1\\Downloads\\Oracle NoSql\\schemaProducto.avsc"));
         }catch(IOException ex){
             ex.printStackTrace();
         }
@@ -165,6 +177,10 @@ public class OracleConection {
         
         store.put(Key.createKey(keyString),jsonBinding.toValue(jsonRecord));    //Se almacena en la base de datos
     }
+    
+    
+    
+    
     
     public ObjetoTienda consultarProducto(int idProducto){
         

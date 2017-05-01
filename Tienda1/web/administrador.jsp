@@ -18,7 +18,7 @@
         <div class="login" id="modoAdmin">
             <h1>Modo Administrador</h1>
             
-            <form method="POST" action="Operaciones/agregarProductos.jsp">
+            <form method="POST" action="Operaciones/modeloProducto.jsp">
                 <input id="boton3" value="Crear Producto" type="submit"/>
             </form>
             

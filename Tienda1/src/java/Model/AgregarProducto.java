@@ -1,16 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Model;
 
 import Conection.OracleConection;
 
-/**
- *
- * @author usuaria
- */
 public class AgregarProducto {
     
     private int variable;
@@ -27,15 +19,16 @@ public class AgregarProducto {
         idProducto = contador;
     }
     
-    public boolean crearProducto(String nombre, int precio, String unidad, String categoria, String imagen){
+    public boolean crearProducto(String nombre, String precio, String unidad, String categoria, String imagen){
         OracleConection conection = new OracleConection();
-        Parametro[] parametros = new Parametro[6];
+        Parametro[] parametros = new Parametro[7];
         parametros[0] = new Parametro("idProducto", String.valueOf(idProducto));
         parametros[1] = new Parametro("nombre", nombre);
-        parametros[2] = new Parametro("precio", String.valueOf(precio));
+        parametros[2] = new Parametro("precio", precio);
         parametros[3] = new Parametro("unidad", unidad);
         parametros[4] = new Parametro("categoria", categoria);
         parametros[5] = new Parametro("imagen", imagen);
+        parametros[6] = new Parametro("estado", "true");
         try{
             conection.agregarProducto(parametros, idProducto);
             return true;

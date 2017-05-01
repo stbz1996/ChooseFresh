@@ -3,9 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/usuaria/Documents/GitHub/ChooseFresh/Tienda1/src/java/Controllers/Tienda.java</file>
-            <file>file:/C:/Users/usuaria/Documents/GitHub/ChooseFresh/Tienda1/src/java/Controllers/ObjetoTienda.java</file>
-            <file>file:/C:/Users/usuaria/Documents/GitHub/ChooseFresh/Tienda1/src/java/Conection/OracleConection.java</file>
+            <file>file:/C:/Users/stbz1/Documents/GitHub/ChooseFresh/Tienda1/web/administrador.jsp</file>
+            <file>file:/C:/Users/stbz1/Documents/GitHub/ChooseFresh/Tienda1/web/session.jsp</file>
+            <file>file:/C:/Users/stbz1/Documents/GitHub/ChooseFresh/Tienda1/web/Operaciones/ValidarAdmin.jsp</file>
+            <file>file:/C:/Users/stbz1/Documents/GitHub/ChooseFresh/Tienda1/web/Operaciones/agregarProductos.jsp</file>
+            <file>file:/C:/Users/stbz1/Documents/GitHub/ChooseFresh/Tienda1/src/java/Controllers/Administrador.java</file>
         </group>
     </open-files>
 </project-private>

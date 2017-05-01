@@ -80,10 +80,9 @@ public class Tienda {
         
        
     
-    public boolean agregarProducto(String nombre, String precio, String unidad, String categoria, String img){
+    public static boolean agregarProducto(String nombre, String precio, String unidad, String categoria, String img){
         AgregarProducto agregarProducto = new AgregarProducto();
-        int newPrecio = Integer.parseInt(precio);
-        return agregarProducto.crearProducto(nombre, newPrecio, unidad, categoria, img);
+        return agregarProducto.crearProducto(nombre, precio, unidad, categoria, img);
     }
     
     public ArrayList<ObjetoTienda> consultarProductos(){
