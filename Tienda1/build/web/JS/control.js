@@ -1,4 +1,5 @@
 
+
 function mostrarZonaFrutas(){
     $("#ZonaFrutas").css("display", "block");
     $("#ZonaVerduras").css("display", "none");

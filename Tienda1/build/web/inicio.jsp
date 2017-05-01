@@ -30,16 +30,43 @@
             List<ObjetoTienda> tuberculos = Tienda.Tubérculos; 
             List<ObjetoTienda> semillas = Tienda.Semillas; 
             List<ObjetoTienda> hortalizas = Tienda.Hortalizas; 
-            int cont1 = 0; 
-            int cont2 = 0; 
-            int cont3 = 0; 
-            int cont4 = 0;
-            int cont5 = 0; 
-            int cont6 = 0; 
-            int cont7 = 0;
+           
+            // carga las frutas
+            int cont1 = 1; 
+            int finalizar1 = 0;
+            if (Tienda.frutas.size() > 0) {finalizar1 = Tienda.frutas.size();}
             
+            // carga las verduras
+            int cont2 = 1; 
+            int finalizar2 = 0;
+            if (Tienda.Verduras.size() > 0) {finalizar2 = Tienda.Verduras.size();}
             
-            // hace el for
+            // carga los vegetales
+            int cont3 = 1; 
+            int finalizar3 = 0;
+            if (Tienda.Vegetales.size() > 0) {finalizar3 = Tienda.Vegetales.size();}
+           
+            // carga las legumbres
+            int cont4 = 1; 
+            int finalizar4 = 0;
+            if (Tienda.Legumbres.size() > 0) {finalizar4 = Tienda.Legumbres.size();}
+            
+            // carga las tuberculos
+            int cont5 = 1; 
+            int finalizar5 = 0;
+            if (Tienda.Tubérculos.size() > 0) {finalizar5 = Tienda.Tubérculos.size();}
+            
+            // carga las semillas
+            int cont6 = 1; 
+            int finalizar6 = 0;
+            if (Tienda.Semillas.size() > 0) {finalizar6 = Tienda.Semillas.size();}
+            
+            // carga las hortalisas
+            int cont7 = 1; 
+            int finalizar7 = 0;
+            if (Tienda.Hortalizas.size() > 0) {finalizar7 = Tienda.Hortalizas.size();}
+                       
+            // carga las ordenes
             int cont8 = 1;
             int finalizar = 0;
             if (Tienda.orden.size() > 0) {finalizar = Tienda.orden.size();}
@@ -48,9 +75,7 @@
         
         <div class="Primario">
             <div class="encabezado">
-                <!TODO: En vez de usuario poner nombre y apellido>
                 <h3 id="textoIzq">Bienvenido a ChooseFresh <%=usuarioActual.user%></h3>
-                
                 <form method="POST" action="Operaciones/CerrarSession.jsp">
                 <button id="botonEncabezado">Salir</button>
                 </form>>
@@ -69,122 +94,123 @@
                 <button id="cajaCategoria" onclick="mostrarZonaHortalizas()">  Hortalizas </button>
             </div>
             
-            <div class="contenido" id="cont">
+                <div class="contenido" id="cont">
                 <h1 id="textoGrande2">Tienda</h1>
                 
-                <div id="ZonaFrutas">
-                    <c:forEach var="i" begin="<%=cont1%>" end="<%=frutas.size()-1%>">
+                <div id="ZonaFrutas" style="display: none;">
+                    <c:forEach var="i" begin="<%=cont1%>" end="<%=finalizar1%>">
                         <form id="objetoTienda" name="" action="Operaciones/AgregarAorden.jsp">
-                            <h3 id="txtoProducto" ><%=frutas.get(cont1).nombre%></h3>
-                            <h4 id="txtoProducto"><%=frutas.get(cont1).precio%> por <%=frutas.get(cont1).unidad%></h4>
-                            <img id="imgProducto" src="https://lpcdedios.files.wordpress.com/2013/11/bananas-01.jpg"/>
+                            <h3 id="txtoProducto" ><%=frutas.get(cont1-1).nombre%></h3>
+                            <h4 id="txtoProducto"><%=frutas.get(cont1-1).precio%> por <%=frutas.get(cont1-1).unidad%></h4>
+                            <img id="imgProducto" src="<%=frutas.get(cont1-1).imagen%>"/>
                             <input type="number"  name="cantidad" max="100" min="0" id="selector" required="required"/><p id="unidad">
-                            <%=frutas.get(cont1).unidad%></p>
-                            <input type="text" style="display: none" name="nombre" value="<%=frutas.get(cont1).nombre%>"/>
-                            <input type="text" style="display: none" name="precio" value="<%=frutas.get(cont1).precio%>"/>
-                            <input type="text" style="display: none" name="unidad" value="<%=frutas.get(cont1).unidad%>"/>
+                            <%=frutas.get(cont1-1).unidad%></p>
+                            <input type="text" style="display: none" name="nombre" value="<%=frutas.get(cont1-1).nombre%>"/>
+                            <input type="text" style="display: none" name="precio" value="<%=frutas.get(cont1-1).precio%>"/>
+                            <input type="text" style="display: none" name="unidad" value="<%=frutas.get(cont1-1).unidad%>"/>
                             <input type="submit" value="Agregar" id="boton2"/> 
                         </form> 
                         <p style="display: none"><%=  cont1 += 1 %></p>
                     </c:forEach>
                 </div>
                 
-                <div id="ZonaVerduras">
-                    <c:forEach var="i" begin="<%=cont2%>" end="<%=verduras.size()-1%>">
+                
+                <div id="ZonaVerduras" style="display: none;">
+                    <c:forEach var="i" begin="<%=cont2%>" end="<%=finalizar2%>">
                         <form id="objetoTienda" name="" action="Operaciones/AgregarAorden.jsp">
-                            <h3 id="txtoProducto"><%=verduras.get(cont2).nombre%></h3>
-                            <h4 id="txtoProducto"><%=verduras.get(cont2).precio%> por <%=verduras.get(cont2).unidad%></h4>
-                            <img id="imgProducto" src="https://lpcdedios.files.wordpress.com/2013/11/bananas-01.jpg"/>
+                            <h3 id="txtoProducto"><%=verduras.get(cont2-1).nombre%></h3>
+                            <h4 id="txtoProducto"><%=verduras.get(cont2-1).precio%> por <%=verduras.get(cont2-1).unidad%></h4>
+                            <img id="imgProducto" src="<%=frutas.get(cont2-1).imagen%>"/>
                             <input type="number" name="cantidad" max="100" min="0" id="selector" required="required"/><p id="unidad">
-                            <%=verduras.get(cont2).unidad%></p>
-                            <input type="text" style="display: none" name="nombre" value="<%=verduras.get(cont2).nombre%>"/>
-                            <input type="text" style="display: none" name="precio" value="<%=verduras.get(cont2).precio%>"/>
-                            <input type="text" style="display: none" name="unidad" value="<%=verduras.get(cont2).unidad%>"/>
+                            <%=verduras.get(cont2-1).unidad%></p>
+                            <input type="text" style="display: none" name="nombre" value="<%=verduras.get(cont2-1).nombre%>"/>
+                            <input type="text" style="display: none" name="precio" value="<%=verduras.get(cont2-1).precio%>"/>
+                            <input type="text" style="display: none" name="unidad" value="<%=verduras.get(cont2-1).unidad%>"/>
                             <input type="submit" value="Agregar" id="boton2"/>
                         </form> 
                         <p style="display: none"><%=  cont2 += 1 %></p>
                     </c:forEach>
                 </div>
                 
-                <div id="ZonaVegetales">
-                    <c:forEach var="i" begin="<%=cont3%>" end="<%=vegetales.size()-1%>">
+                <div id="ZonaVegetales" style="display: none;">
+                    <c:forEach var="i" begin="<%=cont3%>" end="<%=finalizar3%>">
                         <form id="objetoTienda" name="" action="Operaciones/AgregarAorden.jsp">
-                            <h3 id="txtoProducto"><%=vegetales.get(cont3).nombre%></h3>
-                            <h4 id="txtoProducto"><%=vegetales.get(cont3).precio%> por <%=vegetales.get(cont3).unidad%></h4>
-                            <img id="imgProducto" src="https://lpcdedios.files.wordpress.com/2013/11/bananas-01.jpg"/>
+                            <h3 id="txtoProducto"><%=vegetales.get(cont3-1).nombre%></h3>
+                            <h4 id="txtoProducto"><%=vegetales.get(cont3-1).precio%> por <%=vegetales.get(cont3-1).unidad%></h4>
+                            <img id="imgProducto" src="<%=frutas.get(cont3-1).imagen%>"/>
                             <input type="number" name="cantidad" max="100" min="0" id="selector" required="required"/><p id="unidad">
-                            <%=vegetales.get(cont3).unidad%></p>
-                            <input type="text" style="display: none" name="nombre" value="<%=vegetales.get(cont3).nombre%>"/>
-                            <input type="text" style="display: none" name="precio" value="<%=vegetales.get(cont3).precio%>"/>
-                            <input type="text" style="display: none" name="unidad" value="<%=vegetales.get(cont3).unidad%>"/>
+                            <%=vegetales.get(cont3-1).unidad%></p>
+                            <input type="text" style="display: none" name="nombre" value="<%=vegetales.get(cont3-1).nombre%>"/>
+                            <input type="text" style="display: none" name="precio" value="<%=vegetales.get(cont3-1).precio%>"/>
+                            <input type="text" style="display: none" name="unidad" value="<%=vegetales.get(cont3-1).unidad%>"/>
                             <input type="submit" value="Agregar" id="boton2"/>
                         </form> 
                         <p style="display: none"><%=  cont3 += 1 %></p>
                     </c:forEach>
                 </div>
                 
-                <div id="ZonaLegumbres">
-                    <c:forEach var="i" begin="<%=cont4%>" end="<%=legumbres.size()-1%>">
+                <div id="ZonaLegumbres" style="display: none;">
+                    <c:forEach var="i" begin="<%=cont4%>" end="<%=finalizar4%>">
                         <form id="objetoTienda" name="" action="Operaciones/AgregarAorden.jsp">
-                            <h3 id="txtoProducto"><%=legumbres.get(cont4).nombre%></h3>
-                            <h4 id="txtoProducto"><%=legumbres.get(cont4).precio%> por <%=legumbres.get(cont4).unidad%></h4>
-                            <img id="imgProducto" src="https://lpcdedios.files.wordpress.com/2013/11/bananas-01.jpg"/>
+                            <h3 id="txtoProducto"><%=legumbres.get(cont4-1).nombre%></h3>
+                            <h4 id="txtoProducto"><%=legumbres.get(cont4-1).precio%> por <%=legumbres.get(cont4-1).unidad%></h4>
+                            <img id="imgProducto" src="<%=frutas.get(cont4-1).imagen%>"/>
                             <input type="number" name="cantidad" max="100" min="0" id="selector" required="required"/><p id="unidad">
-                            <%=legumbres.get(cont4).unidad%></p>
-                            <input type="text" style="display: none" name="nombre" value="<%=legumbres.get(cont4).nombre%>"/>
-                            <input type="text" style="display: none" name="precio" value="<%=legumbres.get(cont4).precio%>"/>
-                            <input type="text" style="display: none" name="unidad" value="<%=legumbres.get(cont4).unidad%>"/>
+                            <%=legumbres.get(cont4-1).unidad%></p>
+                            <input type="text" style="display: none" name="nombre" value="<%=legumbres.get(cont4-1).nombre%>"/>
+                            <input type="text" style="display: none" name="precio" value="<%=legumbres.get(cont4-1).precio%>"/>
+                            <input type="text" style="display: none" name="unidad" value="<%=legumbres.get(cont4-1).unidad%>"/>
                             <input type="submit" value="Agregar" id="boton2"/>
                         </form> 
                         <p style="display: none"><%=  cont4 += 1 %></p>
                     </c:forEach>
                 </div>
                 
-                <div id="ZonaTuberculos">
-                    <c:forEach var="i" begin="<%=cont5%>" end="<%=tuberculos.size()-1%>">
+                <div id="ZonaTuberculos" style="display: none;">
+                    <c:forEach var="i" begin="<%=cont5%>" end="<%=finalizar5%>">
                         <form id="objetoTienda" name="" action="Operaciones/AgregarAorden.jsp">
-                            <h3 id="txtoProducto"><%=tuberculos.get(cont5).nombre%></h3>
-                            <h4 id="txtoProducto"><%=tuberculos.get(cont5).precio%> por <%=tuberculos.get(cont5).unidad%></h4>
-                            <img id="imgProducto" src="https://lpcdedios.files.wordpress.com/2013/11/bananas-01.jpg"/>
+                            <h3 id="txtoProducto"><%=tuberculos.get(cont5-1).nombre%></h3>
+                            <h4 id="txtoProducto"><%=tuberculos.get(cont5-1).precio%> por <%=tuberculos.get(cont5-1).unidad%></h4>
+                            <img id="imgProducto" src="<%=frutas.get(cont5-1).imagen%>"/>
                             <input type="number" name="cantidad" max="100" min="0" id="selector" required="required"/><p id="unidad">
-                            <%=tuberculos.get(cont5).unidad%></p>
-                            <input type="text" style="display: none" name="nombre" value="<%=tuberculos.get(cont5).nombre%>"/>
-                            <input type="text" style="display: none" name="precio" value="<%=tuberculos.get(cont5).precio%>"/>
-                            <input type="text" style="display: none" name="unidad" value="<%=tuberculos.get(cont5).unidad%>"/>
+                            <%=tuberculos.get(cont5-1).unidad%></p>
+                            <input type="text" style="display: none" name="nombre" value="<%=tuberculos.get(cont5-1).nombre%>"/>
+                            <input type="text" style="display: none" name="precio" value="<%=tuberculos.get(cont5-1).precio%>"/>
+                            <input type="text" style="display: none" name="unidad" value="<%=tuberculos.get(cont5-1).unidad%>"/>
                             <input type="submit" value="Agregar" id="boton2"/>
                         </form> 
                         <p style="display: none"><%=  cont5 += 1 %></p>
                     </c:forEach>
                 </div>
                 
-                <div id="ZonaSemillas">
-                    <c:forEach var="i" begin="<%=cont6%>" end="<%=semillas.size()-1%>">
+                <div id="ZonaSemillas" style="display: none;">
+                    <c:forEach var="i" begin="<%=cont6%>" end="<%=finalizar6%>">
                         <form id="objetoTienda" name="" action="Operaciones/AgregarAorden.jsp">
-                            <h3 id="txtoProducto"><%=semillas.get(cont6).nombre%></h3>
-                            <h4 id="txtoProducto"><%=semillas.get(cont6).precio%> por <%=semillas.get(cont6).unidad%></h4>
-                            <img id="imgProducto" src="https://lpcdedios.files.wordpress.com/2013/11/bananas-01.jpg"/>
+                            <h3 id="txtoProducto"><%=semillas.get(cont6-1).nombre%></h3>
+                            <h4 id="txtoProducto"><%=semillas.get(cont6-1).precio%> por <%=semillas.get(cont6-1).unidad%></h4>
+                            <img id="imgProducto" src="<%=frutas.get(cont6-1).imagen%>"/>
                             <input type="number" name="cantidad" max="100" min="0" id="selector" required="required"/><p id="unidad">
-                            <%=semillas.get(cont6).unidad%></p>
-                            <input type="text" style="display: none" name="nombre" value="<%=semillas.get(cont6).nombre%>"/>
-                            <input type="text" style="display: none" name="precio" value="<%=semillas.get(cont6).precio%>"/>
-                            <input type="text" style="display: none" name="unidad" value="<%=semillas.get(cont6).unidad%>"/>
+                            <%=semillas.get(cont6-1).unidad%></p>
+                            <input type="text" style="display: none" name="nombre" value="<%=semillas.get(cont6-1).nombre%>"/>
+                            <input type="text" style="display: none" name="precio" value="<%=semillas.get(cont6-1).precio%>"/>
+                            <input type="text" style="display: none" name="unidad" value="<%=semillas.get(cont6-1).unidad%>"/>
                             <input type="submit" value="Agregar" id="boton2"/>
                         </form> 
                         <p style="display: none"><%=  cont6 += 1 %></p>
                     </c:forEach>
                 </div>
                 
-                <div id="ZonaHortalizas">
-                    <c:forEach var="i" begin="<%=cont7%>" end="<%=hortalizas.size()-1%>">
+                <div id="ZonaHortalizas" style="display: none;">
+                    <c:forEach var="i" begin="<%=cont7%>" end="<%=finalizar7%>">
                         <form id="objetoTienda" name="" action="Operaciones/AgregarAorden.jsp">
-                            <h3 id="txtoProducto"><%=hortalizas.get(cont7).nombre%></h3>
-                            <h4 id="txtoProducto"><%=hortalizas.get(cont7).precio%> por <%=hortalizas.get(cont7).unidad%></h4>
-                            <img id="imgProducto" src="https://lpcdedios.files.wordpress.com/2013/11/bananas-01.jpg"/>
+                            <h3 id="txtoProducto"><%=hortalizas.get(cont7-1).nombre%></h3>
+                            <h4 id="txtoProducto"><%=hortalizas.get(cont7-1).precio%> por <%=hortalizas.get(cont7-1).unidad%></h4>
+                            <img id="imgProducto" src="<%=frutas.get(cont7-1).imagen%>"/>
                             <input type="number" name="cantidad" max="100" min="0" id="selector" required="required"/><p id="unidad">
-                            <%=hortalizas.get(cont7).unidad%></p>
-                            <input type="text" style="display: none" name="nombre" value="<%=hortalizas.get(cont7).nombre%>"/>
-                            <input type="text" style="display: none" name="precio" value="<%=hortalizas.get(cont7).precio%>"/>
-                            <input type="text" style="display: none" name="unidad" value="<%=hortalizas.get(cont7).unidad%>"/>
+                            <%=hortalizas.get(cont7-1).unidad%></p>
+                            <input type="text" style="display: none" name="nombre" value="<%=hortalizas.get(cont7-1).nombre%>"/>
+                            <input type="text" style="display: none" name="precio" value="<%=hortalizas.get(cont7-1).precio%>"/>
+                            <input type="text" style="display: none" name="unidad" value="<%=hortalizas.get(cont7-1).unidad%>"/>
                             <input type="submit" value="Agregar" id="boton2"/>
                         </form> 
                         <p style="display: none"><%=  cont7 += 1 %></p>

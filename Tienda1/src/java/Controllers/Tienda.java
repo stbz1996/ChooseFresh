@@ -48,14 +48,10 @@ public class Tienda {
         Tienda.Hortalizas.clear();
         
         List<ObjetoTienda> lista = new ArrayList<>();
-        lista.add(new ObjetoTienda("Bananos", 1522, "Kg", "Frutas", ""));
-        lista.add(new ObjetoTienda("Sandia", 4520, "Kg", "Frutas", ""));
-        lista.add(new ObjetoTienda("Kiwi", 999, "Kg", "Frutas", ""));
-        lista.add(new ObjetoTienda("Piña", 1247, "Kg", "Frutas", ""));
-        lista.add(new ObjetoTienda("Camote", 3000, "Kg", "Verduras", ""));
-        lista.add(new ObjetoTienda("Naranja", 4102, "Kg", "Frutas", ""));
-        lista.add(new ObjetoTienda("Melón", 2556, "Kg", "Tuberculos", ""));
-        lista.add(new ObjetoTienda("xx", 2556, "Kg", "Hortalizas", ""));
+        lista.add(new ObjetoTienda("Bananos", 1522, "Kg", "Frutas", "http://eva.hn/wp-content/uploads/2014/01/bananasA.jpg"));
+
+        
+        
         
         for (int i = 0; i < lista.size(); i++) {
             ObjetoTienda nuevo = lista.get(i);
@@ -69,13 +65,6 @@ public class Tienda {
                 case "Hortalizas":Tienda.Hortalizas.add(nuevo);  break;
             }
         }
-        if (frutas.isEmpty()) {frutas.add(new     ObjetoTienda("No disponible", 0, "Kg", "Frutas", ""));}
-        if (Verduras.isEmpty()) {Verduras.add(new   ObjetoTienda("No disponible", 0, "Kg", "Verduras", ""));}
-        if (Vegetales.isEmpty()) {Vegetales.add(new  ObjetoTienda("No disponible", 0, "Kg", "Vegetales", ""));}
-        if (Legumbres.isEmpty()) {Legumbres.add(new  ObjetoTienda("No disponible", 0, "Kg", "Legumbres", ""));}
-        if (Tubérculos.isEmpty()) {Tubérculos.add(new ObjetoTienda("No disponible", 0, "Kg", "Tuberculos", ""));}
-        if (Semillas.isEmpty()) {Semillas.add(new   ObjetoTienda("No disponible", 0, "Kg", "Semillas", ""));}
-        if (Hortalizas.isEmpty()) {Hortalizas.add(new ObjetoTienda("No disponible", 0, "Kg", "Hortalizas", ""));}
     }
         
        
