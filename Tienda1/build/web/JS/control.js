@@ -95,3 +95,29 @@ function mostrarOrden(){
     $("#ordenOculta").css("display", "block");
     $("#textoGrande2").text("Mi Orden");
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function verCrearProducto(){
+    $("#crearProducto").css("display", "block");
+    $("#modoAdmin").css("display", "none");
+}

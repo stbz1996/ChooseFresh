@@ -11,7 +11,7 @@
             String pass  = request.getParameter("pass");
             
             if (user.equals("admin") && pass.equals("admin")){
-                response.sendRedirect("administrador.jsp"); 
+                response.sendRedirect("Operaciones/verificarAdmin.jsp"); 
             }
             else{
 

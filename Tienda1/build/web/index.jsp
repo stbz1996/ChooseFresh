@@ -9,7 +9,7 @@
         <script type="text/javascript" src="JS/control.js"></script>
         <title>Login</title>
     </head>
-    <body BGCOLOR="black">
+    <body>
         <div class="login">
             <h1>Login</h1>
             <div class="part1">
