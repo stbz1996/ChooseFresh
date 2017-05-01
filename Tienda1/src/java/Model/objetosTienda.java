@@ -1,4 +1,5 @@
 package Model;
+import Conection.OracleConection;
 import Controllers.ObjetoTienda;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,8 +17,13 @@ public class objetosTienda {
 
     public static List<ObjetoTienda> retornarTienda(){
         lista.clear();
+        // conecta con la base
+        OracleConection conect = new OracleConection();
+        lista = conect.consultarProductos();
+        
+        
         // limpia y pide a la base
-        llenarTienda();
+        //llenarTienda();
         return lista;
     }
     

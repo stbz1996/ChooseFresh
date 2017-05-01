@@ -17,10 +17,7 @@ public class Tienda {
     public static List<productoOrden> orden = new ArrayList<>();
     
     
-    public static void llenarTienda(){
-        objetosTienda tienda = new objetosTienda();
-        tienda.llenarTienda();
-    }
+    
     
     public static void agregarEnOrden(productoOrden proc){
         int index = -1;

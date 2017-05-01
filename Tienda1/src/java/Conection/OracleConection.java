@@ -67,10 +67,7 @@ public class OracleConection {
         
         store.put(Key.createKey(keyString),jsonBinding.toValue(jsonRecord));    //Se almacena en la base de datos
     }
-    
-    
-    
-    
+     
     public Parametro[] consultaUsuario(String usuario){
         
         try{
@@ -100,9 +97,6 @@ public class OracleConection {
         return parametros;
     }    
     
-    
-    
-    
     public void agregarAdministrador(Parametro[] parametros, String usuario){
         //Obtener archivo con la estructura de la llave
         try{
@@ -124,9 +118,6 @@ public class OracleConection {
         
         store.put(Key.createKey(keyString),jsonBinding.toValue(jsonRecord));
     }
-    
-    
-    
     
     public Parametro[] consultarAdministrador(String usuario){
         try{
@@ -156,19 +147,15 @@ public class OracleConection {
         return parametros;
     }
     
-    
-    
-    
-    
     public void agregarProducto(Parametro[] parametros){
         int idProducto = getIdProducto();
-        String keyString = "producto" + idProducto +1;                             //Nombre de la llave a usar
+        String keyString = "producto" + idProducto;                             //Nombre de la llave a usar
         final Schema catalogSchema = parser.getTypes().get("basedatos.proyecto.producto");//Obtener mapa de los tipos definidos en el esquema
         jsonBinding = avroCatalog.getJsonBinding(catalogSchema);                //Se crea una interfaz que es usada para la serializacion de los valores
         JsonRecord jsonRecord = new JsonRecord(objectNode, catalogSchema);      //Almacena los diferentes campos que se crearon en el schema
         
         //Se dan los valores a los campos
-        objectNode.put("idProducto", idProducto);
+        objectNode.put("idProducto", String.valueOf(idProducto));
         for (Parametro parametro:parametros){
             objectNode.put(parametro.getNombre(),parametro.getValor());
         }
@@ -239,7 +226,7 @@ public class OracleConection {
                 productoTienda = new ObjetoTienda(nombre, precio, unidad, categoria,imagen);
                 productos.add(productoTienda);
                 idProducto ++;
-            }
+        }
         }catch(Exception e){
             return productos;
         }
