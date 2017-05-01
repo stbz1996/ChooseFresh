@@ -17,6 +17,11 @@ public class Tienda {
     public static List<productoOrden> orden = new ArrayList<>();
     
     
+    public static void llenarTienda(){
+        objetosTienda tienda = new objetosTienda();
+        tienda.llenarTienda();
+    }
+    
     public static void agregarEnOrden(productoOrden proc){
         int index = -1;
         for (productoOrden x : Tienda.orden) {
@@ -37,9 +42,6 @@ public class Tienda {
     
     
     public static void pedirtienda(){
-        // esto va a contener todo el listado que viene desde la base
-        // solo haga sus cositas y deje en la variable tienda todo la vara jaja nada mas, 
-        // el resto se hace solo
         Tienda.frutas.clear();
         Tienda.Verduras.clear();
         Tienda.Vegetales.clear();
@@ -48,10 +50,8 @@ public class Tienda {
         Tienda.Semillas.clear();
         Tienda.Hortalizas.clear();
         
-        objetosTienda tienda = new objetosTienda();
-        List<ObjetoTienda> lista = new ArrayList<>();
-        lista = tienda.retornarTienda();
-        
+        List<ObjetoTienda> lista = objetosTienda.retornarTienda();
+
         for (int i = 0; i < lista.size(); i++) {
             ObjetoTienda nuevo = lista.get(i);
             switch (lista.get(i).categoria) {

@@ -76,11 +76,15 @@
         <div class="Primario">
             <div class="encabezado">
                 <h3 id="textoIzq">Bienvenido a ChooseFresh <%=usuarioActual.user%></h3>
+                <form method="POST" action="Operaciones/llenarDatos.jsp">
+                    <button id="botonEncabezado">Llenar Datos</button>
+                </form>
                 <form method="POST" action="Operaciones/CerrarSession.jsp">
-                <button id="botonEncabezado">Salir</button>
+                    <button id="botonEncabezado">Salir</button>
                 </form>>
                 <button id="botonEncabezado">Pedir</button>
                 <button id="botonEncabezado" onclick="mostrarOrden()">Ver Orden</button>
+                
             </div>
 
             <div class="barralateralIzq">
@@ -120,7 +124,7 @@
                         <form id="objetoTienda" name="" action="Operaciones/AgregarAorden.jsp">
                             <h3 id="txtoProducto"><%=verduras.get(cont2-1).nombre%></h3>
                             <h4 id="txtoProducto"><%=verduras.get(cont2-1).precio%> por <%=verduras.get(cont2-1).unidad%></h4>
-                            <img id="imgProducto" src="<%=frutas.get(cont2-1).imagen%>"/>
+                            <img id="imgProducto" src="<%=verduras.get(cont2-1).imagen%>"/>
                             <input type="number" name="cantidad" max="100" min="0" id="selector" required="required"/><p id="unidad">
                             <%=verduras.get(cont2-1).unidad%></p>
                             <input type="text" style="display: none" name="nombre" value="<%=verduras.get(cont2-1).nombre%>"/>
@@ -137,7 +141,7 @@
                         <form id="objetoTienda" name="" action="Operaciones/AgregarAorden.jsp">
                             <h3 id="txtoProducto"><%=vegetales.get(cont3-1).nombre%></h3>
                             <h4 id="txtoProducto"><%=vegetales.get(cont3-1).precio%> por <%=vegetales.get(cont3-1).unidad%></h4>
-                            <img id="imgProducto" src="<%=frutas.get(cont3-1).imagen%>"/>
+                            <img id="imgProducto" src="<%=vegetales.get(cont3-1).imagen%>"/>
                             <input type="number" name="cantidad" max="100" min="0" id="selector" required="required"/><p id="unidad">
                             <%=vegetales.get(cont3-1).unidad%></p>
                             <input type="text" style="display: none" name="nombre" value="<%=vegetales.get(cont3-1).nombre%>"/>
@@ -154,7 +158,7 @@
                         <form id="objetoTienda" name="" action="Operaciones/AgregarAorden.jsp">
                             <h3 id="txtoProducto"><%=legumbres.get(cont4-1).nombre%></h3>
                             <h4 id="txtoProducto"><%=legumbres.get(cont4-1).precio%> por <%=legumbres.get(cont4-1).unidad%></h4>
-                            <img id="imgProducto" src="<%=frutas.get(cont4-1).imagen%>"/>
+                            <img id="imgProducto" src="<%=legumbres.get(cont4-1).imagen%>"/>
                             <input type="number" name="cantidad" max="100" min="0" id="selector" required="required"/><p id="unidad">
                             <%=legumbres.get(cont4-1).unidad%></p>
                             <input type="text" style="display: none" name="nombre" value="<%=legumbres.get(cont4-1).nombre%>"/>
@@ -171,7 +175,7 @@
                         <form id="objetoTienda" name="" action="Operaciones/AgregarAorden.jsp">
                             <h3 id="txtoProducto"><%=tuberculos.get(cont5-1).nombre%></h3>
                             <h4 id="txtoProducto"><%=tuberculos.get(cont5-1).precio%> por <%=tuberculos.get(cont5-1).unidad%></h4>
-                            <img id="imgProducto" src="<%=frutas.get(cont5-1).imagen%>"/>
+                            <img id="imgProducto" src="<%=tuberculos.get(cont5-1).imagen%>"/>
                             <input type="number" name="cantidad" max="100" min="0" id="selector" required="required"/><p id="unidad">
                             <%=tuberculos.get(cont5-1).unidad%></p>
                             <input type="text" style="display: none" name="nombre" value="<%=tuberculos.get(cont5-1).nombre%>"/>
@@ -188,7 +192,7 @@
                         <form id="objetoTienda" name="" action="Operaciones/AgregarAorden.jsp">
                             <h3 id="txtoProducto"><%=semillas.get(cont6-1).nombre%></h3>
                             <h4 id="txtoProducto"><%=semillas.get(cont6-1).precio%> por <%=semillas.get(cont6-1).unidad%></h4>
-                            <img id="imgProducto" src="<%=frutas.get(cont6-1).imagen%>"/>
+                            <img id="imgProducto" src="<%=semillas.get(cont6-1).imagen%>"/>
                             <input type="number" name="cantidad" max="100" min="0" id="selector" required="required"/><p id="unidad">
                             <%=semillas.get(cont6-1).unidad%></p>
                             <input type="text" style="display: none" name="nombre" value="<%=semillas.get(cont6-1).nombre%>"/>
@@ -205,7 +209,7 @@
                         <form id="objetoTienda" name="" action="Operaciones/AgregarAorden.jsp">
                             <h3 id="txtoProducto"><%=hortalizas.get(cont7-1).nombre%></h3>
                             <h4 id="txtoProducto"><%=hortalizas.get(cont7-1).precio%> por <%=hortalizas.get(cont7-1).unidad%></h4>
-                            <img id="imgProducto" src="<%=frutas.get(cont7-1).imagen%>"/>
+                            <img id="imgProducto" src="<%=hortalizas.get(cont7-1).imagen%>"/>
                             <input type="number" name="cantidad" max="100" min="0" id="selector" required="required"/><p id="unidad">
                             <%=hortalizas.get(cont7-1).unidad%></p>
                             <input type="text" style="display: none" name="nombre" value="<%=hortalizas.get(cont7-1).nombre%>"/>
