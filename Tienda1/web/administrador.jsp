@@ -23,15 +23,9 @@
             <form action="Operaciones/verProductosAdmin.jsp">
                 <input id="boton3" value="Ver productos" type="submit"/>
             </form>
-            
-            
-            
-            <input id="boton3" value="Ver Ordenes" type="submit"/>
-            
             <form action=Operaciones/CerrarSession.jsp>
                 <input id="boton3" value="Salir" type="submit"/>
-            </form>
-            
+            </form>    
         </div>
         
         
