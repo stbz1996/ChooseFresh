@@ -296,7 +296,6 @@ public class OracleConection {
         JsonNode jsonNode = jsonRecord.getJsonNode();
         
         return Integer.parseInt(jsonNode.get("ultimoIdOrden").getTextValue());
-    
     }
     
     public void setIdOrden(int idOrden){
@@ -307,7 +306,7 @@ public class OracleConection {
             ex.printStackTrace();
         }
         
-        String keyString = "contadorOrden" + idOrden;
+        String keyString = "contadorOrden1";
         final Schema catalogSchema = parser.getTypes().get("basedatos.proyecto.contadorOrden");
         jsonBinding = avroCatalog.getJsonBinding(catalogSchema);
         JsonRecord jsonRecord = new JsonRecord(objectNode, catalogSchema);

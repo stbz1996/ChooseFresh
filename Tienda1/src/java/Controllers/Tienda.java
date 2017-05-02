@@ -1,5 +1,6 @@
 
 package Controllers;
+import static Controllers.Tienda.orden;
 import Model.AgregarOrden;
 import Model.AgregarProducto;
 import Model.Contador;
@@ -55,9 +56,7 @@ public class Tienda {
             orden.add(proc);  
         }
     }
-    
-    
-    
+     
     public static void pedirtienda(){
         Tienda.frutas.clear();
         Tienda.Verduras.clear();
@@ -85,8 +84,6 @@ public class Tienda {
         }
     }
         
-       
-    
     public static boolean agregarProducto(String nombre, String precio, String unidad, String categoria, String img){
         
         Contador obtenerContador = new Contador();
@@ -106,12 +103,11 @@ public class Tienda {
         
     }
     
-    public ArrayList<Orden> consultarOrdenes(){
+    public static ArrayList<Orden> consultarOrdenes(){
         ContadorOrden contador = new ContadorOrden();
         int idOrden = contador.obtenerIdOrden()-1;
         ConsultarOrden consultarOrden = new ConsultarOrden();
+        List<Orden> x = consultarOrden.obtenerOrdenes(idOrden);
         return consultarOrden.obtenerOrdenes(idOrden);
-        
     }
-    
 }
