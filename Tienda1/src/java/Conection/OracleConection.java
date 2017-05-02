@@ -262,7 +262,7 @@ public class OracleConection {
     public void agregarOrden(Parametro[] parametros, String idOrden){
         try{
             //TODO:Buscar forma para usar archivos en lugar del path
-            parser.parse(new File("C:\\Users\\stbz1\\Downloads\\Oracle NoSql\\schemaContador.avsc"));
+            parser.parse(new File("C:\\Users\\stbz1\\Downloads\\Oracle NoSql\\schemaOrden.avsc"));
         }catch(IOException ex){
             ex.printStackTrace();
         }
