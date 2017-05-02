@@ -314,4 +314,32 @@ public class OracleConection {
         objectNode.put("ultimoIdOrden", String.valueOf(idOrden));
         store.put(Key.createKey(keyString),jsonBinding.toValue(jsonRecord));
     }
+    
+    public ArrayList<Orden> consultarOrdenes(int ultimoIdOrden){
+        try{
+            //TODO:Buscar forma para usar archivos en lugar del path
+            parser.parse(new File("C:\\Users\\stbz1\\Downloads\\Oracle NoSql\\schemaOrden.avsc"));
+        }catch(IOException ex){
+            ex.printStackTrace();
+        }
+        final Schema catalogSchema = parser.getTypes().get("basedatos.proyecto.orden");
+        jsonBinding = avroCatalog.getJsonBinding(catalogSchema);
+        ArrayList<Orden> ordenes = new ArrayList<>();
+        Orden orden;
+        
+        for(int i = 1; i <= ultimoIdOrden; i++){
+            
+            String keyString = "orden" + i;                             //Nombre de la llave a usar
+            ValueVersion valueVersion = store.get(Key.createKey(keyString));
+            JsonRecord jsonRecord = jsonBinding.toObject(valueVersion.getValue());
+            JsonNode jsonNode = jsonRecord.getJsonNode();
+            int idOrden = Integer.parseInt(jsonNode.get("idOrden").getTextValue());
+            String direccion = jsonNode.get("direccion").getTextValue();
+            String pedido = jsonNode.get("pedido").getTextValue();
+            orden = new Orden(idOrden, direccion, pedido);
+            ordenes.add(orden);
+        }
+
+        return ordenes;
+    }
 }

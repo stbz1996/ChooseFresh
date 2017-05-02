@@ -6,6 +6,8 @@ import Model.Contador;
 import Model.ContadorOrden;
 import Model.ObtenerProductos;
 import Model.objetosTienda;
+import Model.Orden;
+import Model.ConsultarOrden;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -101,6 +103,15 @@ public class Tienda {
         int idProducto = obtenerContador.obtenerIdProducto()-1;
         ObtenerProductos obtenerProductos = new ObtenerProductos();
         return obtenerProductos.consultarProductos(idProducto);
+        
     }
-
+    
+    public ArrayList<Orden> consultarOrdenes(){
+        ContadorOrden contador = new ContadorOrden();
+        int idOrden = contador.obtenerIdOrden()-1;
+        ConsultarOrden consultarOrden = new ConsultarOrden();
+        return consultarOrden.obtenerOrdenes(idOrden);
+        
+    }
+    
 }
