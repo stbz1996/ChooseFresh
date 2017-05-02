@@ -15,11 +15,11 @@ public class objetosTienda {
     
     
 
-    public static List<ObjetoTienda> retornarTienda(){
+    public static List<ObjetoTienda> retornarTienda(int idProducto){
         lista.clear();
         // conecta con la base
         OracleConection conect = new OracleConection();
-        lista = conect.consultarProductos();
+        lista = conect.consultarProductos(idProducto);
         
         
         // limpia y pide a la base

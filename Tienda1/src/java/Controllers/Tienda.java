@@ -1,6 +1,7 @@
 
 package Controllers;
 import Model.AgregarProducto;
+import Model.Contador;
 import Model.ObtenerProductos;
 import Model.objetosTienda;
 import java.util.ArrayList;
@@ -51,8 +52,9 @@ public class Tienda {
         Tienda.Tubérculos.clear();
         Tienda.Semillas.clear();
         Tienda.Hortalizas.clear();
-        
-        List<ObjetoTienda> lista = objetosTienda.retornarTienda();
+        Contador obtenerContador = new Contador();
+        int idProducto = obtenerContador.obtenerIdProducto();
+        List<ObjetoTienda> lista = objetosTienda.retornarTienda(idProducto);
 
         for (int i = 0; i < lista.size(); i++) {
             ObjetoTienda nuevo = lista.get(i);
@@ -71,13 +73,21 @@ public class Tienda {
        
     
     public static boolean agregarProducto(String nombre, String precio, String unidad, String categoria, String img){
+        
+        Contador obtenerContador = new Contador();
+        
+        int idProducto = obtenerContador.obtenerIdProducto();
         AgregarProducto agregarProducto = new AgregarProducto();
-        return agregarProducto.crearProducto(nombre, precio, unidad, categoria, img);
+        int newIdProducto = idProducto + 1;
+        obtenerContador.incrementarIdProducto(newIdProducto);
+        return agregarProducto.crearProducto(nombre, precio, unidad, categoria, img, idProducto);
     }
     
     public ArrayList<ObjetoTienda> consultarProductos(){
+        Contador obtenerContador = new Contador();
+        int idProducto = obtenerContador.obtenerIdProducto()-1;
         ObtenerProductos obtenerProductos = new ObtenerProductos();
-        return obtenerProductos.consultarProductos();
+        return obtenerProductos.consultarProductos(idProducto);
     }
 
 }
