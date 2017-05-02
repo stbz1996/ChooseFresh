@@ -28,7 +28,9 @@
             
             <input id="boton3" value="Ver Ordenes" type="submit"/>
             
-            
+            <form action=Operaciones/CerrarSession.jsp>
+                <input id="boton3" value="Salir" type="submit"/>
+            </form>
             
         </div>
         

@@ -15,10 +15,10 @@
             <div class="part1">
                 <form method="POST" action="session.jsp">
                     <p>Username</p> 
-                    <input class="campoTexto" type="text" maxlength="20" minlength="4" name="user"/>
+                    <input class="campoTexto" type="text" maxlength="20" minlength="4" name="user" required=""/>
                     <br><br>
                     <p>Contraseña</p> 
-                    <input class="campoTexto" type="password" maxlength="10" minlength="4" name="pass"/>
+                    <input class="campoTexto" type="password" maxlength="10" minlength="4" name="pass" required=""/>
                     <br><br><input class="boton1" type="submit" value="Iniciar"/>
                 </form>
                 <form action="crearCuenta.jsp">
