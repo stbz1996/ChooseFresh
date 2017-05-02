@@ -307,6 +307,17 @@ body{
     font-size: 15px;
     width: 40%;
 }
+
+#mostrarOrden{
+    background: white;
+    border-radius: 15px;
+    width: 60%;
+    text-align: left;
+    font-size: 25px;
+    margin-left: 18%;
+    padding: 1%;
+}
+
 /*--- Animaciones ---*/
 @keyframes animar{
 	from{transform: rotateY(0deg);}

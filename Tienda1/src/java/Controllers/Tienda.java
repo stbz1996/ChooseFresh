@@ -17,7 +17,12 @@ public class Tienda {
     public static List<productoOrden> orden = new ArrayList<>();
     
     
-    
+    public static void llenarTienda(){
+        //AgregarProducto proc = new AgregarProducto();
+        /*for (int i = 0; i < 1000; i++) {
+            proc.crearProducto("Brócoli" + i, "555", "c/u", "Hortalizas", "http://www.odepa.cl/imagenes/BROCOLI.jpg");
+        }*/
+    }
     
     public static void agregarEnOrden(productoOrden proc){
         int index = -1;

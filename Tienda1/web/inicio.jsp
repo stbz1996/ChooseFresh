@@ -81,8 +81,10 @@
                 </form>
                 <form method="POST" action="Operaciones/CerrarSession.jsp">
                     <button id="botonEncabezado">Salir</button>
-                </form>>
+                </form>
+                <form method="POST" action="Operaciones/hacerPedido.jsp">
                 <button id="botonEncabezado">Pedir</button>
+                </form>
                 <button id="botonEncabezado" onclick="mostrarOrden()">Ver Orden</button>
                 
             </div>

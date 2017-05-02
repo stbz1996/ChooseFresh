@@ -10,9 +10,8 @@
 <html>
     <body>
         <%
-            // carga x objtos en la tienda
+            // carga x objetos en la tienda
             Tienda.llenarTienda();
- 
             response.sendRedirect("../inicio.jsp");
         %>
     </body>
