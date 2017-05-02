@@ -32,12 +32,11 @@ public class Tienda {
         AgregarOrden agregarOrden = new AgregarOrden();
         return agregarOrden.crearOrden(String.valueOf(idOrden), dir, ord);
     }
-     
+    
     public static void llenarTienda(){
-        //AgregarProducto proc = new AgregarProducto();
-        /*for (int i = 0; i < 1000; i++) {
-            proc.crearProducto("Brócoli" + i, "555", "c/u", "Hortalizas", "http://www.odepa.cl/imagenes/BROCOLI.jpg");
-        }*/
+        for (int i = 0; i < 10; i++) {
+            Tienda.agregarProducto("Brócoli" + 1, "1300", "c/u", "Hortalizas", "http://www.odepa.cl/imagenes/BROCOLI.jpg");
+        }
     }
     
     public static void agregarEnOrden(productoOrden proc){
@@ -85,9 +84,7 @@ public class Tienda {
     }
         
     public static boolean agregarProducto(String nombre, String precio, String unidad, String categoria, String img){
-        
         Contador obtenerContador = new Contador();
-        
         int idProducto = obtenerContador.obtenerIdProducto();
         AgregarProducto agregarProducto = new AgregarProducto();
         int newIdProducto = idProducto + 1;
