@@ -328,6 +328,24 @@ body{
     text-align: left;
     overflow: hidden;
 }
+
+
+#mostrarordenes{
+    background: green;
+    width: 90%;
+    padding: 1%;
+    margin-left: 4%;
+    border-radius: 15px;
+}
+#ordenprimaria{
+    background: white;
+    border-radius: 15px;
+    padding: 1%;
+    width: 98%;
+    font-size: 30px;
+    margin-bottom: 2%;
+}
+
 /*--- Animaciones ---*/
 @keyframes animar{
 	from{transform: rotateY(0deg);}
