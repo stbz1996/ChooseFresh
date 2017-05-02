@@ -22,4 +22,26 @@ public class VerificarAdministrador {
             return false;
         }
     }  
+
+    public boolean crearAdmin(String nombre, String apellido, String usuario,String correo,String pass1){
+        try{
+            OracleConection conection = new OracleConection();
+            if(consultarAdministrador()){
+                return false;
+            }else{
+                Parametro[] parametros = new Parametro[6];
+                parametros[0] = new Parametro("nombre", nombre);
+                parametros[1] = new Parametro("apellido", apellido);
+                parametros[2] = new Parametro("usuario", usuario);
+                parametros[3] = new Parametro("correo", correo);
+                parametros[4] = new Parametro("password", password);
+                parametros[5] = new Parametro("estado", "true");
+                conection.agregarAdministrador(parametros, usuario);
+                return true;
+            } 
+        }
+        catch(Exception ex){
+            return false;
+        }
+    }
 }

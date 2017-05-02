@@ -24,7 +24,7 @@
                 </form>
             </div>
             <div class="part2">
-                <img class="img1" src="https://t1.ea.ltmcdn.com/es/images/8/1/8/img_los_5_pajaros_que_mejor_cantan_20818_paso_3_600.jpg"/>
+                <img class="img1" src="https://lh3.googleusercontent.com/-yDIBtt0GtGM/WQf_VXa5BeI/AAAAAAAAAfc/H2uEu6JE718lBFiV5rWnsEa8P3Jo-Q9BwCL0B/w329-d-h218-p-rw/logoInvestigacion.png"/>
             </div>
             <%
                 String msj = (String)session.getAttribute("msj");

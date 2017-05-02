@@ -11,18 +11,16 @@
         <title>Administrador</title>
     </head>
     <body>
-        <%
-        
-        %>
-        
         <div class="login" id="modoAdmin">
             <h1>Modo Administrador</h1>
             
             <form method="POST" action="Operaciones/modeloProducto.jsp">
                 <input id="boton3" value="Crear Producto" type="submit"/>
             </form>
+            <form action="Operaciones/agregarAdmin.jsp">
+                <input id="boton3" value="Agregar Administradores" type="submit"/>
+            </form>
             
-            <input id="boton3" value="Agregar Administradores" type="submit"/>
             <input id="boton3" value="Ver usuario" type="submit"/>
             <input id="boton3" value="Ver productos" type="submit"/>
         </div>

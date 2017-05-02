@@ -1,6 +1,8 @@
 
 package Controllers;
 
+import Model.VerificarAdministrador;
+
 public class Administrador {
     public String user;
     public String cont;
@@ -10,8 +12,9 @@ public class Administrador {
         this.cont = cont;
     }
     
-    public boolean VerificarAdmin(){
+    public static boolean VerificarAdmin(String nombre, String apellido, String username,String mail,String pass1){
         // aqui verifico el admin
-        return true;
+        VerificarAdministrador admin = new VerificarAdministrador(username,pass1);
+        return admin.crearAdmin(nombre,  apellido,  username, mail, pass1);
     }
 }

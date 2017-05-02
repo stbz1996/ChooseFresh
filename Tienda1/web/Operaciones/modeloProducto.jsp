@@ -36,7 +36,10 @@
                         <OPTION>Hortalizas</OPTION> 
                     </SELECT>
                     <input type="text" minlength="4" required=""                name="imagen" />
-                    <input type="submit" value="Agregar" />
+                    <input id="boton3" style=" float: left; margin-left: 0%; width: 33%;" type="submit" value="Agregar" />
+                </form>
+                <form method="post" action="../administrador.jsp">
+                    <input id="boton3" style="float: left; margin-left: 7%;width: 33%;" type="submit" value="Menú" />
                 </form>
             </div>
             <br><br>
