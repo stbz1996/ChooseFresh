@@ -1,7 +1,9 @@
 
 package Controllers;
+import Model.AgregarOrden;
 import Model.AgregarProducto;
 import Model.Contador;
+import Model.ContadorOrden;
 import Model.ObtenerProductos;
 import Model.objetosTienda;
 import java.util.ArrayList;
@@ -20,7 +22,12 @@ public class Tienda {
     
     
     public static boolean enviarOrden(String dir, String ord){
-        return true;
+        ContadorOrden contador = new ContadorOrden();
+        int idOrden = contador.obtenerIdOrden();
+        int newIdOrden = idOrden + 1;
+        contador.incrementarIdOrden(newIdOrden);
+        AgregarOrden agregarOrden = new AgregarOrden();
+        return agregarOrden.crearOrden(String.valueOf(idOrden), dir, ord);
     }
     
     

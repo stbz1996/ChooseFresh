@@ -5,7 +5,6 @@ import Controllers.ObjetoTienda;
 import Model.*;
 import java.io.File;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 
 import org.apache.avro.Schema;
@@ -257,6 +256,62 @@ public class OracleConection {
         jsonBinding = avroCatalog.getJsonBinding(catalogSchema);
         JsonRecord jsonRecord = new JsonRecord(objectNode, catalogSchema);
         objectNode.put("ultimoIdProducto", String.valueOf(idProducto));
+        store.put(Key.createKey(keyString),jsonBinding.toValue(jsonRecord));
+    }
+    
+    public void agregarOrden(Parametro[] parametros, String idOrden){
+        try{
+            //TODO:Buscar forma para usar archivos en lugar del path
+            parser.parse(new File("C:\\Users\\stbz1\\Downloads\\Oracle NoSql\\schemaContador.avsc"));
+        }catch(IOException ex){
+            ex.printStackTrace();
+        }
+        
+        String keyString = "orden" + idOrden;
+        final Schema catalogSchema = parser.getTypes().get("basedatos.proyecto.orden");
+        jsonBinding = avroCatalog.getJsonBinding(catalogSchema);
+        
+        JsonRecord jsonRecord = new JsonRecord(objectNode, catalogSchema);
+        
+        for (Parametro parametro:parametros){
+            objectNode.put(parametro.getNombre(),parametro.getValor());
+        }
+        store.put(Key.createKey(keyString),jsonBinding.toValue(jsonRecord));
+    }
+    
+    public int getIdOrden(){
+        try{
+            //TODO:Buscar forma para usar archivos en lugar del path
+            parser.parse(new File("C:\\Users\\stbz1\\Downloads\\Oracle NoSql\\schemaContadorOrden.avsc"));
+        }catch(IOException ex){
+            ex.printStackTrace();
+        }
+        String keyString = "contadorOrden1";
+        final Schema catalogSchema = parser.getTypes().get("basedatos.proyecto.contadorOrden");
+        jsonBinding = avroCatalog.getJsonBinding(catalogSchema);
+        
+        ValueVersion valueVersion = store.get(Key.createKey(keyString));
+        
+        JsonRecord jsonRecord = jsonBinding.toObject(valueVersion.getValue());
+        JsonNode jsonNode = jsonRecord.getJsonNode();
+        
+        return Integer.parseInt(jsonNode.get("ultimoIdOrden").getTextValue());
+    
+    }
+    
+    public void setIdOrden(int idOrden){
+        try{
+            //TODO:Buscar forma para usar archivos en lugar del path
+            parser.parse(new File("C:\\Users\\stbz1\\Downloads\\Oracle NoSql\\schemaContadorOrden.avsc"));
+        }catch(IOException ex){
+            ex.printStackTrace();
+        }
+        
+        String keyString = "contadorOrden" + idOrden;
+        final Schema catalogSchema = parser.getTypes().get("basedatos.proyecto.contadorOrden");
+        jsonBinding = avroCatalog.getJsonBinding(catalogSchema);
+        JsonRecord jsonRecord = new JsonRecord(objectNode, catalogSchema);
+        objectNode.put("ultimoIdOrden", String.valueOf(idOrden));
         store.put(Key.createKey(keyString),jsonBinding.toValue(jsonRecord));
     }
 }
