@@ -251,7 +251,7 @@ public class OracleConection {
             ex.printStackTrace();
         }
         
-        String keyString = "contador" + idProducto;
+        String keyString = "contador1";
         final Schema catalogSchema = parser.getTypes().get("basedatos.proyecto.contador");
         jsonBinding = avroCatalog.getJsonBinding(catalogSchema);
         JsonRecord jsonRecord = new JsonRecord(objectNode, catalogSchema);

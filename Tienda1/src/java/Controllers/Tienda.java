@@ -34,8 +34,8 @@ public class Tienda {
     }
     
     public static void llenarTienda(){
-        for (int i = 0; i < 10; i++) {
-            Tienda.agregarProducto("Brócoli" + 1, "1300", "c/u", "Hortalizas", "http://www.odepa.cl/imagenes/BROCOLI.jpg");
+        for (int i = 0; i < 900; i++) {
+            Tienda.agregarProducto("Brócoli" + i, "1300", "c/u", "Hortalizas", "http://www.odepa.cl/imagenes/BROCOLI.jpg");
         }
     }
     
