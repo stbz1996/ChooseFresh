@@ -147,19 +147,23 @@ public class OracleConection {
         return parametros;
     }
     
-    public void agregarProducto(Parametro[] parametros){
-        int idProducto = getIdProducto();
+    public void agregarProducto(Parametro[] parametros, int idProducto){
+        //int idProducto = getIdProducto();
+        try{
+            //TODO:Buscar forma para usar archivos en lugar del path
+            parser.parse(new File("C:\\Users\\usuaria\\Downloads\\schemaProducto.avsc"));
+        }catch(IOException ex){
+            ex.printStackTrace();
+        }
         String keyString = "producto" + idProducto;                             //Nombre de la llave a usar
         final Schema catalogSchema = parser.getTypes().get("basedatos.proyecto.producto");//Obtener mapa de los tipos definidos en el esquema
         jsonBinding = avroCatalog.getJsonBinding(catalogSchema);                //Se crea una interfaz que es usada para la serializacion de los valores
         JsonRecord jsonRecord = new JsonRecord(objectNode, catalogSchema);      //Almacena los diferentes campos que se crearon en el schema
         
         //Se dan los valores a los campos
-        objectNode.put("idProducto", String.valueOf(idProducto));
         for (Parametro parametro:parametros){
             objectNode.put(parametro.getNombre(),parametro.getValor());
         }
-        
         store.put(Key.createKey(keyString),jsonBinding.toValue(jsonRecord));    //Se almacena en la base de datos
     }
     
@@ -199,7 +203,7 @@ public class OracleConection {
         
     }
     
-    public ArrayList<ObjetoTienda> consultarProductos(){
+    public ArrayList<ObjetoTienda> consultarProductos(int ultimoIdProducto){
         try{
             //TODO:Buscar forma para usar archivos en lugar del path
             parser.parse(new File("C:\\Users\\stbz1\\Downloads\\Oracle NoSql\\schemaProducto.avsc"));
@@ -210,30 +214,58 @@ public class OracleConection {
         jsonBinding = avroCatalog.getJsonBinding(catalogSchema);
         ArrayList<ObjetoTienda> productos = new ArrayList<>();
         ObjetoTienda productoTienda;
-        int idProducto = 1;
-        try{
-            while (true){
-                String keyString = "producto" + idProducto;                             //Nombre de la llave a usar
-                ValueVersion valueVersion = store.get(Key.createKey(keyString));
-                
-                JsonRecord jsonRecord = jsonBinding.toObject(valueVersion.getValue());
-                JsonNode jsonNode = jsonRecord.getJsonNode();
-                String nombre = jsonNode.get("nombre").getTextValue();
-                int precio = Integer.parseInt(jsonNode.get("precio").getTextValue());
-                String categoria = jsonNode.get("categoria").getTextValue();
-                String unidad = jsonNode.get("unidad").getTextValue();
-                String imagen = jsonNode.get("imagen").getTextValue();        
-                productoTienda = new ObjetoTienda(nombre, precio, unidad, categoria,imagen);
-                productos.add(productoTienda);
-                idProducto ++;
+        
+        for(int i = 1; i <= ultimoIdProducto; i++){
+            
+            String keyString = "producto" + i;                             //Nombre de la llave a usar
+            ValueVersion valueVersion = store.get(Key.createKey(keyString));
+            JsonRecord jsonRecord = jsonBinding.toObject(valueVersion.getValue());
+            JsonNode jsonNode = jsonRecord.getJsonNode();
+            String nombre = jsonNode.get("nombre").getTextValue();
+            int precio = Integer.parseInt(jsonNode.get("precio").getTextValue());
+            String categoria = jsonNode.get("categoria").getTextValue();
+            String unidad = jsonNode.get("unidad").getTextValue();
+            String imagen = jsonNode.get("imagen").getTextValue();        
+            productoTienda = new ObjetoTienda(nombre, precio, unidad, categoria,imagen);
+            productos.add(productoTienda);
         }
-        }catch(Exception e){
-            return productos;
-        }
+
+        return productos;
         //los que van al for(Key, valueVersion, jsonRecord, jsonNode, parametros)
     }
     
     public int getIdProducto(){
-        return consultarProductos().size() + 1;
+        try{
+            //TODO:Buscar forma para usar archivos en lugar del path
+            parser.parse(new File("C:\\Users\\stbz1\\Downloads\\Oracle NoSql\\schemaContador.avsc"));
+        }catch(IOException ex){
+            ex.printStackTrace();
+        }
+        String keyString = "contador1";
+        final Schema catalogSchema = parser.getTypes().get("basedatos.proyecto.contador");
+        jsonBinding = avroCatalog.getJsonBinding(catalogSchema);
+        
+        ValueVersion valueVersion = store.get(Key.createKey(keyString));
+        
+        JsonRecord jsonRecord = jsonBinding.toObject(valueVersion.getValue());
+        JsonNode jsonNode = jsonRecord.getJsonNode();
+        
+        return Integer.parseInt(jsonNode.get("ultimoIdProducto").getTextValue());
+    }
+    
+    public void setIdProducto(int idProducto){
+        try{
+            //TODO:Buscar forma para usar archivos en lugar del path
+            parser.parse(new File("C:\\Users\\stbz1\\Downloads\\Oracle NoSql\\schemaContador.avsc"));
+        }catch(IOException ex){
+            ex.printStackTrace();
+        }
+        
+        String keyString = "contador" + idProducto;
+        final Schema catalogSchema = parser.getTypes().get("basedatos.proyecto.contador");
+        jsonBinding = avroCatalog.getJsonBinding(catalogSchema);
+        JsonRecord jsonRecord = new JsonRecord(objectNode, catalogSchema);
+        objectNode.put("ultimoIdProducto", String.valueOf(idProducto));
+        store.put(Key.createKey(keyString),jsonBinding.toValue(jsonRecord));
     }
 }

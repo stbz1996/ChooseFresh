@@ -16,8 +16,8 @@ import java.util.ArrayList;
 public class ObtenerProductos {
     public ObtenerProductos(){}
     
-    public ArrayList<ObjetoTienda> consultarProductos(){
+    public ArrayList<ObjetoTienda> consultarProductos(int idProducto){
         OracleConection oracleConection = new OracleConection();
-        return oracleConection.consultarProductos();
+        return oracleConection.consultarProductos(idProducto);
     }
 }
