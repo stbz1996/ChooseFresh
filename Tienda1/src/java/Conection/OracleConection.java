@@ -205,8 +205,7 @@ public class OracleConection {
         ArrayList<ObjetoTienda> productos = new ArrayList<>();
         ObjetoTienda productoTienda;
         
-        for(int i = 1; i <= ultimoIdProducto; i++){
-            
+        for(int i = 1; i < ultimoIdProducto; i++){
             String keyString = "producto" + i;                             //Nombre de la llave a usar
             ValueVersion valueVersion = store.get(Key.createKey(keyString));
             JsonRecord jsonRecord = jsonBinding.toObject(valueVersion.getValue());

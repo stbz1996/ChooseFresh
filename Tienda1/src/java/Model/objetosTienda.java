@@ -21,9 +21,6 @@ public class objetosTienda {
         OracleConection conect = new OracleConection();
         lista = conect.consultarProductos(idProducto);
         
-        
-        // limpia y pide a la base
-        //llenarTienda();
         return lista;
     }
     
