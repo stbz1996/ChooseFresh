@@ -18,7 +18,7 @@ public class Tienda {
     public static List<ObjetoTienda> Semillas = new ArrayList<>();
     public static List<ObjetoTienda> Hortalizas = new ArrayList<>();
     public static List<productoOrden> orden = new ArrayList<>();
-    
+    public static List<ObjetoTienda> lista = new ArrayList<>();
     
     
     public static boolean enviarOrden(String dir, String ord){
@@ -29,11 +29,7 @@ public class Tienda {
         AgregarOrden agregarOrden = new AgregarOrden();
         return agregarOrden.crearOrden(String.valueOf(idOrden), dir, ord);
     }
-    
-    
-    
-    
-    
+     
     public static void llenarTienda(){
         //AgregarProducto proc = new AgregarProducto();
         /*for (int i = 0; i < 1000; i++) {
@@ -68,9 +64,10 @@ public class Tienda {
         Tienda.Tubérculos.clear();
         Tienda.Semillas.clear();
         Tienda.Hortalizas.clear();
+        Tienda.lista.clear();
         Contador obtenerContador = new Contador();
         int idProducto = obtenerContador.obtenerIdProducto();
-        List<ObjetoTienda> lista = objetosTienda.retornarTienda(idProducto);
+        lista = objetosTienda.retornarTienda(idProducto);
 
         for (int i = 0; i < lista.size(); i++) {
             ObjetoTienda nuevo = lista.get(i);

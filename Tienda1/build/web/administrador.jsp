@@ -20,9 +20,16 @@
             <form action="Operaciones/agregarAdmin.jsp">
                 <input id="boton3" value="Agregar Administradores" type="submit"/>
             </form>
+            <form action="Operaciones/verProductosAdmin.jsp">
+                <input id="boton3" value="Ver productos" type="submit"/>
+            </form>
             
-            <input id="boton3" value="Ver usuario" type="submit"/>
-            <input id="boton3" value="Ver productos" type="submit"/>
+            
+            
+            <input id="boton3" value="Ver Ordenes" type="submit"/>
+            
+            
+            
         </div>
         
         
