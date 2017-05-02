@@ -151,7 +151,7 @@ public class OracleConection {
         //int idProducto = getIdProducto();
         try{
             //TODO:Buscar forma para usar archivos en lugar del path
-            parser.parse(new File("C:\\Users\\usuaria\\Downloads\\schemaProducto.avsc"));
+            parser.parse(new File("C:\\Users\\stbz1\\Downloads\\Oracle NoSql\\schemaProducto.avsc"));
         }catch(IOException ex){
             ex.printStackTrace();
         }
@@ -167,20 +167,11 @@ public class OracleConection {
         store.put(Key.createKey(keyString),jsonBinding.toValue(jsonRecord));    //Se almacena en la base de datos
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
     public ObjetoTienda consultarProducto(int idProducto){
         
         try{
             //TODO:Buscar forma para usar archivos en lugar del path
-            parser.parse(new File("C:\\Users\\usuaria\\Downloads\\schemaProducto.avsc"));
+            parser.parse(new File("C:\\Users\\stbz1\\Downloads\\Oracle NoSql\\schemaProducto.avsc"));
         }catch(IOException ex){
             ex.printStackTrace();
         }
