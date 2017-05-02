@@ -13,6 +13,7 @@
             // guaro los parametros
             String orden  = request.getParameter("ordenBD");
             String dir =    request.getParameter("direccion");
+            
             boolean estado = Tienda.enviarOrden(dir, orden);
             if (estado) {
                 session.setAttribute("msj", "Su orden ha sido enviada");
