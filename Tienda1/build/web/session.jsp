@@ -13,6 +13,9 @@
             if (user.equals("admin") && pass.equals("admin")){
                 response.sendRedirect("Operaciones/verificarAdmin.jsp"); 
             }
+            if (user.equals("empresa") && pass.equals("empresa")){
+                response.sendRedirect("Operaciones/empresa.jsp"); 
+            }
             else{
 
                 if (user.equals("") || pass.equals("")) {
