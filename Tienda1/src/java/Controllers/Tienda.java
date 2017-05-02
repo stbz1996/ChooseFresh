@@ -17,6 +17,15 @@ public class Tienda {
     public static List<productoOrden> orden = new ArrayList<>();
     
     
+    
+    public static boolean enviarOrden(String dir, String ord){
+        return true;
+    }
+    
+    
+    
+    
+    
     public static void llenarTienda(){
         //AgregarProducto proc = new AgregarProducto();
         /*for (int i = 0; i < 1000; i++) {

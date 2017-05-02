@@ -25,6 +25,7 @@
                 total += item.cantidad * item.precio;
             }
             
+            
 
             // aqui creo el string para la base
             
@@ -40,10 +41,20 @@
             <p id="mostrarOrden">
                 Total de la compra: <%=total%> Colones.
             </p>
-            
-            <p id="mostrarOrden" >
-            <textarea style="width: 100%;" name="direccion" rows="10" cols="40"></textarea>
-            </p>
+            <form method="post" action="iniciarPedido.jsp">
+                <P style="margin-left: 24%;">¿A que dirección será enviado el pedido?</p>
+                <p id="mostrarOrden" >
+                    <textarea name="direccion" style="width: 98%;" rows="10" cols="40"></textarea>
+                </p>
+                <input type="text" value="<%=orden%>" style="display: none" name="ordenBD" required=""> 
+                <input id="boton3" type="submit" value="Pedir"/>
+            </form><br><br><br>
+            <%
+                String msj = (String)session.getAttribute("msj");
+                session.setAttribute("msj", "");
+                if (msj == null) {msj = "";}
+            %>
+            <p style="text-align: center"> <%=msj%> </p>
         </div>
         
     </body>
