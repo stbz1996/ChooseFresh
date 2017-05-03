@@ -46,7 +46,6 @@ public class OracleConection {
     //Path de Steven = C:\\Users\\stbz1\\Downloads\\Oracle NoSql\\
     
     public void agregarUsuario(Parametro[] parametros, String usuario){
-        
         //Obtener archivo con la estructura de la llave
         try{
             //TODO:Buscar forma para usar archivos en lugar del path
@@ -67,6 +66,7 @@ public class OracleConection {
         store.put(Key.createKey(keyString),jsonBinding.toValue(jsonRecord));    //Se almacena en la base de datos
     }
      
+    
     public Parametro[] consultaUsuario(String usuario){
         
         try{
@@ -117,6 +117,7 @@ public class OracleConection {
         
         store.put(Key.createKey(keyString),jsonBinding.toValue(jsonRecord));
     }
+    
     
     public Parametro[] consultarAdministrador(String usuario){
         try{

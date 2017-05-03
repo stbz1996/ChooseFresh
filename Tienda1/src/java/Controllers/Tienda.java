@@ -33,6 +33,8 @@ public class Tienda {
         return agregarOrden.crearOrden(String.valueOf(idOrden), dir, ord);
     }
     
+    
+    // funcion sin uso
     public static void llenarTienda(){
 
         // Frutas 
@@ -136,7 +138,7 @@ public class Tienda {
         Tienda.lista.clear();
         Contador obtenerContador = new Contador();
         int idProducto = obtenerContador.obtenerIdProducto();
-        lista = objetosTienda.retornarTienda(idProducto);
+        Tienda.lista = objetosTienda.retornarTienda(idProducto);
 
         for (int i = 0; i < lista.size(); i++) {
             ObjetoTienda nuevo = lista.get(i);

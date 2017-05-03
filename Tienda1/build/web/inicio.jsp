@@ -76,9 +76,11 @@
         <div class="Primario">
             <div class="encabezado">
                 <h3 id="textoIzq">Bienvenido a ChooseFresh <%=usuarioActual.user%></h3>
+                <!--
                 <form method="POST" action="Operaciones/llenarDatos.jsp">
                     <button id="botonEncabezado">Llenar Datos</button>
                 </form>
+                -->
                 <form method="POST" action="Operaciones/CerrarSession.jsp">
                     <button id="botonEncabezado">Salir</button>
                 </form>
